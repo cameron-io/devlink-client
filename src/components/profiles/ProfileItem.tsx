@@ -14,7 +14,7 @@ const ProfileItem: FunctionComponent<Props> = ({
     },
 }) => {
     return (
-        <div className="profile bg-light">
+        <div className="profile border rounded-3">
             <img src={'https:' + avatar} alt="" className="round-img" />
             <div>
                 <h2>{name}</h2>

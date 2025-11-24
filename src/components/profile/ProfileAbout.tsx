@@ -11,7 +11,7 @@ const ProfileAbout: FunctionComponent<Props> = ({
         user: { name },
     },
 }) => (
-    <div className="profile-about bg-light p-2">
+    <div className="profile-about border rounded-3 p-2">
         {bio && (
             <Fragment>
                 <h2 className="text-primary">

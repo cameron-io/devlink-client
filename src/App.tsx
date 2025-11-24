@@ -28,16 +28,6 @@ import PrivateRoute from './components/routing/PrivateRoute'
 // Style
 //// Bootstrap
 import './styles/scss/styles.scss'
-//// Custom
-import './styles/css/Activity.css'
-import './styles/css/Forms.css'
-import './styles/css/Global.css'
-import './styles/css/Margin.css'
-import './styles/css/Mobile.css'
-import './styles/css/Padding.css'
-import './styles/css/Table.css'
-import './styles/css/Text.css'
-import './styles/css/Utilities.css'
 
 const App = () => {
     useEffect(() => {
@@ -54,7 +44,7 @@ const App = () => {
                     {/* Navigation */}
                     <Navbar />
                     {/* Wrap in container for padding */}
-                    <section className="container">
+                    <section className="container" style={{minHeight: "85svh"}}>
                         <Alert />
                         {/* Wrap other routes in a Switch */}
                         <Routes>

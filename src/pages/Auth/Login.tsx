@@ -46,40 +46,45 @@ const Login: FunctionComponent<Props> = ({ loginAction, isAuthenticated }) => {
     // Replace <a href></a> with <Link to></Link>
     return (
         <Fragment>
-            <h1 className="large text-primary">Sign In</h1>
-            <p className="lead">
-                <i className="fas fa-user"></i> Sign Into Your Account
-            </p>
-            <form className="form" onSubmit={(e) => onSubmit(e)}>
-                <div className="form-group">
-                    <input
-                        type="email"
-                        placeholder="Email Address"
-                        name="email"
-                        value={email}
-                        onChange={(e) => onChange(e)}
-                        required
-                    />
+            <div className='d-flex align-items-center py-4 bg-body-tertiary border rounded'>
+                <div className='w-100 m-auto mt-4' style={{maxWidth: "330px", padding: "1rem"}}>
+                    <h1 className="h3 mb-3 fw-normal">Sign Into Your Account</h1>
+                    <form className="form" onSubmit={(e) => onSubmit(e)}>
+                        <div className="form-floating">
+                            <input
+                                type="email"
+                                className='form-control'
+                                placeholder="Email Address"
+                                name="email"
+                                value={email}
+                                onChange={(e) => onChange(e)}
+                                required
+                            />
+                            <label htmlFor="floatingInput">Email</label>
+                        </div>
+                        <div className="form-floating">
+                            <input
+                                type="password"
+                                className='form-control'
+                                placeholder="Password"
+                                name="password"
+                                value={password}
+                                onChange={(e) => onChange(e)}
+                                minLength={6}
+                            />
+                            <label htmlFor="floatingInput">Password</label>
+                        </div>
+                        <input
+                            type="submit"
+                            className="btn btn-primary w-100 py-2"
+                            value="Login"
+                        />
+                    </form>
+                    <p className="my-4">
+                        Don't have an account? <Link to="/register">Sign Up</Link>
+                    </p>
                 </div>
-                <div className="form-group">
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        name="password"
-                        value={password}
-                        onChange={(e) => onChange(e)}
-                        minLength={6}
-                    />
-                </div>
-                <input
-                    type="submit"
-                    className="btn btn-primary"
-                    value="Login"
-                />
-            </form>
-            <p className="my-1">
-                Don't have an account? <Link to="/register">Sign Up</Link>
-            </p>
+            </div>
         </Fragment>
     )
 }

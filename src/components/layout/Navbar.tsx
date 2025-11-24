@@ -16,18 +16,18 @@ const Navbar: FunctionComponent<Props> = ({
     logoutAction,
 }) => {
     const authLinks = (
-        <ul>
-            <li>
-                <Link to="/profiles">Developers</Link>
+        <ul className='navbar-nav me-auto mb-2 mb-md-0'>
+            <li className='nav-item'>
+                <Link className='nav-link active' to="/profiles">Developers</Link>
             </li>
-            <li>
-                <Link to="/dashboard">
+            <li className='nav-item'>
+                <Link className='nav-link active' to="/dashboard">
                     <i className="fa fa-user" />{' '}
                     <span className="hide-sm">Dashboard</span>
                 </Link>
             </li>
-            <li>
-                <Link onClick={logoutAction} to="#!">
+            <li className='nav-item'>
+                <Link className='nav-link active' onClick={logoutAction} to="#!">
                     <i className="fa fa-sign-out-alt" />{' '}
                     <span className="hide-sm">Logout</span>
                 </Link>
@@ -36,32 +36,37 @@ const Navbar: FunctionComponent<Props> = ({
     )
 
     const guestLinks = (
-        <ul>
-            <li>
-                <Link to="/profiles">Developers</Link>
+        <ul className='navbar-nav me-auto mb-2 mb-md-0'>
+            <li className='nav-item'>
+                <Link className='nav-link active' to="/profiles">Developers</Link>
             </li>
-            <li>
-                <Link to="/register">Register</Link>
+            <li className='nav-item'>
+                <Link className='nav-link active' to="/register">Register</Link>
             </li>
-            <li>
-                <Link to="/login">Login</Link>
+            <li className='nav-item'>
+                <Link className='nav-link active' to="/login">Login</Link>
             </li>
         </ul>
     )
 
     return (
         <div>
-            <nav className="navbar bg-dark">
-                <h1>
-                    <Link to="/">
-                        <i className="fas fa-network-wired"></i> DevLink
-                    </Link>
-                </h1>
-                {!loading && (
-                    <Fragment>
-                        {isAuthenticated ? authLinks : guestLinks}
-                    </Fragment>
-                )}
+            <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+                <div className='container-fluid'>
+                    <h1>
+                        <Link className='navbar-brand' to="/">
+                            <i className="fas fa-network-wired"></i> DevLink
+                        </Link>
+                    </h1>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    {!loading && (
+                        <Fragment>
+                            {isAuthenticated ? authLinks : guestLinks}
+                        </Fragment>
+                    )}
+                </div>
             </nav>
         </div>
     )

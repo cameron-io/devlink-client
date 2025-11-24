@@ -19,14 +19,14 @@ const Experience: FunctionComponent<Props> = ({
                 (
                     <p>No Entries.</p>
                 ) : (
-                    <table>
+                    <table className="table">
                     <thead>
                         <tr>
-                            <th>Company</th>
-                            <th>Title</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Description</th>
+                            <th scope="col">Company</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">End Date</th>
+                            <th scope="col">Description</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,7 +50,7 @@ const Experience: FunctionComponent<Props> = ({
                                         onClick={() => deleteExperience(exp.id)}
                                         className="btn btn-danger"
                                     >
-                                        X
+                                        <i className="fas fa-trash"></i>
                                     </button>
                                 </td>
                             </tr>

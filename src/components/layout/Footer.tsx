@@ -4,7 +4,6 @@ const Footer = () => {
             style={{
                 height: 'auto',
                 width: '100%',
-                backgroundColor: '#E5E5E5',
             }}
         >
             <div

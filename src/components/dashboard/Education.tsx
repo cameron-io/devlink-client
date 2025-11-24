@@ -19,14 +19,14 @@ const Education: FunctionComponent<Props> = ({
                 (
                     <p>No Entries.</p>
                 ) : (
-                    <table>
+                    <table className="table">
                     <thead>
                         <tr>
-                            <th>School</th>
-                            <th>Degree</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Description</th>
+                            <th scope="col">School</th>
+                            <th scope="col">Degree</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">End Date</th>
+                            <th scope="col">Description</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,7 +50,7 @@ const Education: FunctionComponent<Props> = ({
                                         onClick={() => deleteEducation(edu.id)}
                                         className="btn btn-danger"
                                     >
-                                        X
+                                        <i className="fas fa-trash"></i>
                                     </button>
                                 </td>
                             </tr>
