@@ -26,6 +26,9 @@ import Alert from './components/layout/Alert'
 import { loadUserAction } from './redux/dispatchers/auth'
 import PrivateRoute from './components/routing/PrivateRoute'
 // Style
+//// Bootstrap
+import './assets/scss/styles.scss'
+//// Custom
 import './assets/css/Activity.css'
 import './assets/css/Forms.css'
 import './assets/css/Global.css'
