@@ -17,7 +17,7 @@ const ProfileTop: FunctionComponent<Props> = ({
 }) => {
     return (
         <div className="profile-top border rounded-3 p-2">
-            <img className="rounded-3 my-1" src={'https:' + avatar} alt="" />
+            <img className="border rounded-3 my-1" src={'https:' + avatar} alt="" />
             <h1 className="large">{name}</h1>
             <p className="lead">
                 {status} {company && <span>at {company}</span>}

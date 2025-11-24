@@ -53,11 +53,13 @@ const Register: FunctionComponent<Props> = ({
 
     return (
         <Fragment>
+            <h1 className="large text-primary">Create Your Account.</h1>
+            <p className='lead'>Please fill in the required fields.</p>
             <div className='d-flex align-items-center py-4 bg-body-tertiary border rounded'>
                 <div className='w-100 m-auto mt-4' style={{maxWidth: "330px", padding: "1rem"}}>
-                    <h1 className="h3 mb-3 fw-normal">Create Your Account</h1>
                     <form className="form" onSubmit={(e) => onSubmit(e)}>
-                        <div className="form-floating">
+                        <h1 className="h3 mb-3 fw-normal">Account Details</h1>
+                        <div className="form-floating mt-4">
                             <input
                                 name="name"
                                 className='form-control'
@@ -68,7 +70,7 @@ const Register: FunctionComponent<Props> = ({
                             />
                             <label htmlFor="floatingInput">Username</label>
                         </div>
-                        <div className="form-floating">
+                        <div className="form-floating mt-2">
                             <input
                                 name="email"
                                 className='form-control'
@@ -79,7 +81,7 @@ const Register: FunctionComponent<Props> = ({
                             />
                             <label htmlFor="floatingInput">Email</label>
                         </div>
-                        <div className="form-floating">
+                        <div className="form-floating mt-4">
                             <input
                                 name="password"
                                 className='form-control'
@@ -90,7 +92,7 @@ const Register: FunctionComponent<Props> = ({
                             />
                             <label htmlFor="floatingInput">Password</label>
                         </div>
-                        <div className="form-floating">
+                        <div className="form-floating mt-2">
                             <input
                                 name="password2"
                                 className='form-control'
@@ -103,7 +105,7 @@ const Register: FunctionComponent<Props> = ({
                         </div>
                         <input
                             type="submit"
-                            className="btn btn-primary w-100 py-2"
+                            className="btn btn-primary w-100 py-2 mt-4"
                             value="Register"
                         />
                     </form>

@@ -15,7 +15,7 @@ const ProfileItem: FunctionComponent<Props> = ({
 }) => {
     return (
         <div className="profile border rounded-3">
-            <img src={'https:' + avatar} alt="" className="round-img" />
+            <img src={'https:' + avatar} alt="" className="border rounded-3" />
             <div>
                 <h2>{name}</h2>
                 <p>

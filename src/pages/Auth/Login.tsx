@@ -46,11 +46,13 @@ const Login: FunctionComponent<Props> = ({ loginAction, isAuthenticated }) => {
     // Replace <a href></a> with <Link to></Link>
     return (
         <Fragment>
+            <h1 className="large text-primary">Sign Into Your Account.</h1>
+            <p className='lead'>Let's get you connected.</p>
             <div className='d-flex align-items-center py-4 bg-body-tertiary border rounded'>
                 <div className='w-100 m-auto mt-4' style={{maxWidth: "330px", padding: "1rem"}}>
-                    <h1 className="h3 mb-3 fw-normal">Sign Into Your Account</h1>
+                    <h1 className="h3 mb-3 fw-normal">Login Details</h1>
                     <form className="form" onSubmit={(e) => onSubmit(e)}>
-                        <div className="form-floating">
+                        <div className="form-floating mt-4">
                             <input
                                 type="email"
                                 className='form-control'
@@ -62,7 +64,7 @@ const Login: FunctionComponent<Props> = ({ loginAction, isAuthenticated }) => {
                             />
                             <label htmlFor="floatingInput">Email</label>
                         </div>
-                        <div className="form-floating">
+                        <div className="form-floating mt-2">
                             <input
                                 type="password"
                                 className='form-control'
@@ -76,7 +78,7 @@ const Login: FunctionComponent<Props> = ({ loginAction, isAuthenticated }) => {
                         </div>
                         <input
                             type="submit"
-                            className="btn btn-primary w-100 py-2"
+                            className="btn btn-primary w-100 py-2 mt-4"
                             value="Login"
                         />
                     </form>
