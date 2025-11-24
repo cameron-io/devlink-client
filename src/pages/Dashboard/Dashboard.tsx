@@ -36,9 +36,9 @@ const Dashboard: FunctionComponent<Props> = ({
                     <Experience experience={profile.experience!} />
                     <Education education={profile.education!} />
 
-                    <div className="my-2">
+                    <div className="my-5">
                         <button
-                            className="btn btn-danger"
+                            className="btn border"
                             onClick={() => {
                                 if (window.confirm(
                                     'Are you sure you want to delete your account? This cannot be undone.'
@@ -47,7 +47,7 @@ const Dashboard: FunctionComponent<Props> = ({
                                 }
                             }}
                         >
-                            <i className="fas fa-trash-alt"></i> Delete My Account
+                            <i className="fas fa-trash-alt mx-1"></i> Delete My Account
                         </button>
                     </div>
                 </Fragment>
