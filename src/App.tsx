@@ -27,17 +27,17 @@ import { loadUserAction } from './redux/dispatchers/auth'
 import PrivateRoute from './components/routing/PrivateRoute'
 // Style
 //// Bootstrap
-import './assets/scss/styles.scss'
+import './styles/scss/styles.scss'
 //// Custom
-import './assets/css/Activity.css'
-import './assets/css/Forms.css'
-import './assets/css/Global.css'
-import './assets/css/Margin.css'
-import './assets/css/Mobile.css'
-import './assets/css/Padding.css'
-import './assets/css/Table.css'
-import './assets/css/Text.css'
-import './assets/css/Utilities.css'
+import './styles/css/Activity.css'
+import './styles/css/Forms.css'
+import './styles/css/Global.css'
+import './styles/css/Margin.css'
+import './styles/css/Mobile.css'
+import './styles/css/Padding.css'
+import './styles/css/Table.css'
+import './styles/css/Text.css'
+import './styles/css/Utilities.css'
 
 const App = () => {
     useEffect(() => {

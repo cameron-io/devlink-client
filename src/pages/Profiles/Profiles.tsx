@@ -4,6 +4,7 @@ import { getProfiles } from '../../redux/dispatchers/profile'
 import ProfileItem from '../../components/profiles/ProfileItem'
 import Spinner from '../../components/layout/Spinner'
 import { RootState } from '../../redux/store'
+import './Profiles.css'
 
 type Props = { profile: any; getProfiles: any }
 
