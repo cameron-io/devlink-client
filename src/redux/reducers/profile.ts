@@ -1,3 +1,4 @@
+import { Reducer } from 'redux'
 import {
     GET_PROFILE,
     GET_PROFILES,
@@ -15,7 +16,7 @@ const initialState = {
     error: {},
 }
 
-const profile = (state = initialState, action: any) => {
+const profile: Reducer = (state = initialState, action: any) => {
     const { type, payload } = action
 
     switch (type) {

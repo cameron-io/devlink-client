@@ -13,7 +13,7 @@ import {
 import { AppDispatch } from '../store'
 
 // Get current user's profile
-export const getCurrentProfile = () =>
+export const getCurrentProfile: any = () =>
     async (dispatch: AppDispatch) => {
         try {
             const res = await axios.get('/api/profiles/me')
@@ -35,7 +35,7 @@ export const getCurrentProfile = () =>
     }
 
 // Get all profiles
-export const getProfiles = () =>
+export const getProfiles: any = () =>
     async (dispatch: AppDispatch) => {
         dispatch({ type: CLEAR_PROFILE })
         try {
@@ -58,7 +58,7 @@ export const getProfiles = () =>
     }
 
 // Get profiles by id
-export const getProfileById = (userId: string) =>
+export const getProfileById: any = (userId: string) =>
     async (dispatch: AppDispatch) => {
         try {
             const res = await axios.get(`/api/profiles/user/${userId}`)
@@ -80,7 +80,7 @@ export const getProfileById = (userId: string) =>
     }
 
 // Get GitHub repos
-export const getGithubRepos = (gitHubUsername: string) =>
+export const getGithubRepos: any = (gitHubUsername: string) =>
     async (dispatch: AppDispatch) => {
         try {
             const res = await axios.get(
@@ -105,7 +105,7 @@ export const getGithubRepos = (gitHubUsername: string) =>
     }
 
 // Create or update profile
-export const createProfile = (formData: any, navigate: any, edit = false) =>
+export const createProfile: any = (formData: any, navigate: any, edit = false) =>
     async (dispatch: AppDispatch) => {
         try {
             const config = {
@@ -156,7 +156,7 @@ export const createProfile = (formData: any, navigate: any, edit = false) =>
     }
 
 // Add Experience
-export const addExperience = (formData: any, navigate: any) =>
+export const addExperience: any = (formData: any, navigate: any) =>
     async (dispatch: AppDispatch) => {
         try {
             const config = {
@@ -199,7 +199,7 @@ export const addExperience = (formData: any, navigate: any) =>
     }
 
 // Add Education
-export const addEducation = (formData: any, navigate: any) =>
+export const addEducation: any = (formData: any, navigate: any) =>
     async (dispatch: AppDispatch) => {
         try {
             const config = {
@@ -242,7 +242,7 @@ export const addEducation = (formData: any, navigate: any) =>
     }
 
 // Delete Experience
-export const deleteExperience = (id: number) =>
+export const deleteExperience: any = (id: number) =>
     async (dispatch: AppDispatch) => {
         try {
             const res = await axios.delete(`/api/profiles/experience/${id}`)
@@ -264,7 +264,7 @@ export const deleteExperience = (id: number) =>
     }
 
 // Delete Education
-export const deleteEducation = (id: number) =>
+export const deleteEducation: any = (id: number) =>
     async (dispatch: AppDispatch) => {
         try {
             const res = await axios.delete(`/api/profiles/education/${id}`)
@@ -286,7 +286,7 @@ export const deleteEducation = (id: number) =>
     }
 
 // Delete Account & Profile
-export const deleteAccount = () =>
+export const deleteAccount: any = () =>
     async (dispatch: AppDispatch) => {
         try {
             await axios.delete('/api/accounts')

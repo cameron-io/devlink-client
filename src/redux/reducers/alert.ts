@@ -4,7 +4,7 @@ import { SET_ALERT, REMOVE_ALERT } from '../dispatchers/include/types'
 const initialState: any[] = []
 
 // state set as initialState
-const alert: Reducer = (state = initialState, action) => {
+const alert: Reducer = (state = initialState, action: any) => {
     // Pull from action
     const { type, payload } = action
 

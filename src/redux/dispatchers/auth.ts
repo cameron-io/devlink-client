@@ -14,7 +14,7 @@ import {
 import { AppDispatch } from '../store'
 
 // Load user
-export const loadUserAction = () =>
+export const loadUserAction: any = () =>
     async (dispatch: AppDispatch) => {
         try {
             const res = await axios.get('/api/accounts/info', {
@@ -32,7 +32,7 @@ export const loadUserAction = () =>
     }
 
 // Register User
-export const registerAction = (name: string, email: string, password: string) =>
+export const registerAction: any = (name: string, email: string, password: string) =>
     async (dispatch: AppDispatch) => {
         const config = {
             headers: {
@@ -64,7 +64,7 @@ export const registerAction = (name: string, email: string, password: string) =>
     }
 
 // Login User
-export const loginAction = (email: string, password: string) =>
+export const loginAction: any = (email: string, password: string) =>
     async (dispatch: AppDispatch) => {
         const config = {
             headers: {
@@ -96,7 +96,7 @@ export const loginAction = (email: string, password: string) =>
     }
 
 // Logout / Clear Profile
-export const logoutAction = () => 
+export const logoutAction: any = () => 
     async (dispatch: AppDispatch) => {
         try {
             const res = await axios.post('/api/accounts/logout', {

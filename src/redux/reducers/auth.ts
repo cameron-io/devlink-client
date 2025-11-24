@@ -1,3 +1,4 @@
+import { Reducer } from 'redux'
 import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
@@ -16,7 +17,7 @@ const initialState = {
     user: null,
 }
 
-const auth = (state = initialState, action: any) => {
+const auth: Reducer = (state = initialState, action: any) => {
     const { type, payload } = action
 
     switch (type) {
