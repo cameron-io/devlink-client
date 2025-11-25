@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { logoutAction } from '../../redux/dispatchers/auth'
 import type { RootState } from '../../redux/store'
 import { StateAuth } from '../../types/common'
-import './Navbar.css'
 
 type Props = {
     auth: StateAuth;
@@ -51,7 +50,7 @@ const Navbar: FunctionComponent<Props> = ({
 
     return (
         <div>
-            <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+            <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4 px-4">
                 <div className='container-fluid'>
                     <h1>
                         <Link className='navbar-brand' to="/">
