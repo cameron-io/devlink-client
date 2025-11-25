@@ -100,12 +100,13 @@ const EditProfile: FunctionComponent<Props> = ({
                 <i className="fas fa-user"></i> Let's get some information to
                 make your profile stand out
             </p>
+            {/* TODO: Separate into FunctionComponent */}
             <div className='d-flex align-items-center py-4 bg-body-tertiary border rounded'>
                 <div className='w-100 m-auto' style={{maxWidth: "330px", padding: "1rem"}}>
-                    <h1 className="h3 mb-3 fw-normal">Education Details</h1>
+                    <h1 className="h3 mb-3 fw-normal">Your Details</h1>
                     <small>* = required field</small>
                     <form className="form" onSubmit={(e) => onSubmit(e)}>
-                        <div className="form">
+                        <div className="form-text">
                             <select
                                 className='form-select'
                                 name="status"
@@ -134,7 +135,7 @@ const EditProfile: FunctionComponent<Props> = ({
                                 Give us an idea of where you are at in your career
                             </small>
                         </div>
-                        <div className="form mt-3">
+                        <div className="form-text mt-3">
                             <input
                                 className='form-control'
                                 type="text"
@@ -147,7 +148,7 @@ const EditProfile: FunctionComponent<Props> = ({
                                 Could be your own company or one you work for
                             </small>
                         </div>
-                        <div className="form mt-3">
+                        <div className="form-text mt-3">
                             <input
                                 className='form-control'
                                 type="text"
@@ -160,7 +161,7 @@ const EditProfile: FunctionComponent<Props> = ({
                                 Could be your own or a company website
                             </small>
                         </div>
-                        <div className="form mt-3">
+                        <div className="form-text mt-3">
                             <input
                                 className='form-control'
                                 type="text"
@@ -173,7 +174,7 @@ const EditProfile: FunctionComponent<Props> = ({
                                 City & state suggested (eg. Boston, MA)
                             </small>
                         </div>
-                        <div className="form mt-3">
+                        <div className="form-text mt-3">
                             <input
                                 className='form-control'
                                 type="text"
@@ -187,7 +188,7 @@ const EditProfile: FunctionComponent<Props> = ({
                                 HTML,CSS,JavaScript,PHP)
                             </small>
                         </div>
-                        <div className="form mt-3">
+                        <div className="form-text mt-3">
                             <input
                                 className='form-control'
                                 type="text"
@@ -201,7 +202,7 @@ const EditProfile: FunctionComponent<Props> = ({
                                 your username
                             </small>
                         </div>
-                        <div className="form mt-3">
+                        <div className="form-text mt-3">
                             <textarea
                                 className='form-control'
                                 placeholder="A short bio of yourself"
@@ -230,7 +231,7 @@ const EditProfile: FunctionComponent<Props> = ({
                         {displaySocialInputs && (
                             <Fragment>
                                 <div className='border rounded p-3'>
-                                    <div className="form social-input">
+                                    <div className="form-text social-input">
                                         <input
                                             className='mx-3 rounded'
                                             type="text"
@@ -242,7 +243,7 @@ const EditProfile: FunctionComponent<Props> = ({
                                         <i className="fab fa-twitter fa-1x"></i>
                                     </div>
 
-                                    <div className="form social-input">
+                                    <div className="form-text social-input">
                                         <input
                                             className='mx-3 rounded'
                                             type="text"
@@ -254,7 +255,7 @@ const EditProfile: FunctionComponent<Props> = ({
                                         <i className="fab fa-facebook fa-1x"></i>
                                     </div>
 
-                                    <div className="form social-input">
+                                    <div className="form-text social-input">
                                         <input
                                             className='mx-3 rounded'
                                             type="text"
@@ -266,7 +267,7 @@ const EditProfile: FunctionComponent<Props> = ({
                                         <i className="fab fa-youtube fa-1x"></i>
                                     </div>
 
-                                    <div className="form social-input">
+                                    <div className="form-text social-input">
                                         <input
                                             className='mx-3 rounded'
                                             type="text"
@@ -278,7 +279,7 @@ const EditProfile: FunctionComponent<Props> = ({
                                         <i className="fab fa-linkedin fa-1x"></i>
                                     </div>
 
-                                    <div className="form social-input">
+                                    <div className="form-text social-input">
                                         <input
                                             className='mx-3 rounded'
                                             type="text"

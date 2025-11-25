@@ -59,185 +59,207 @@ const CreateProfile: FunctionComponent<Props> = ({ createProfile }) => {
                 <i className="fas fa-user"></i> Let's get some information to
                 make your profile stand out
             </p>
-            <small>* = required field</small>
-            <form className="form" onSubmit={(e) => onSubmit(e)}>
-                <div className="form-group">
-                    <select
-                        name="status"
-                        value={status}
-                        onChange={(e) => onChange(e)}
-                    >
-                        <option value="0">* Select Professional Status</option>
-                        <option value="Developer">Developer</option>
-                        <option value="Junior Developer">
-                            Junior Developer
-                        </option>
-                        <option value="Senior Developer">
-                            Senior Developer
-                        </option>
-                        <option value="Manager">Manager</option>
-                        <option value="Student or Learning">
-                            Student or Learning
-                        </option>
-                        <option value="Instructor">
-                            Instructor or Teacher
-                        </option>
-                        <option value="Intern">Intern</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    <small className="form-text">
-                        Give us an idea of where you are at in your career
-                    </small>
-                </div>
-                <div className="form-group">
-                    <input
-                        type="text"
-                        placeholder="Company"
-                        name="company"
-                        value={company}
-                        onChange={(e) => onChange(e)}
-                    />
-                    <small className="form-text">
-                        Could be your own company or one you work for
-                    </small>
-                </div>
-                <div className="form-group">
-                    <input
-                        type="text"
-                        placeholder="Website"
-                        name="website"
-                        value={website}
-                        onChange={(e) => onChange(e)}
-                    />
-                    <small className="form-text">
-                        Could be your own or a company website
-                    </small>
-                </div>
-                <div className="form-group">
-                    <input
-                        type="text"
-                        placeholder="Location"
-                        name="location"
-                        value={location}
-                        onChange={(e) => onChange(e)}
-                    />
-                    <small className="form-text">
-                        City & state suggested (eg. Boston, MA)
-                    </small>
-                </div>
-                <div className="form-group">
-                    <input
-                        type="text"
-                        placeholder="* Skills"
-                        name="skills"
-                        value={skills}
-                        onChange={(e) => onChange(e)}
-                    />
-                    <small className="form-text">
-                        Please use comma separated values (eg.
-                        HTML,CSS,JavaScript,PHP)
-                    </small>
-                </div>
-                <div className="form-group">
-                    <input
-                        type="text"
-                        placeholder="Github Username"
-                        name="gitHubUsername"
-                        value={gitHubUsername}
-                        onChange={(e) => onChange(e)}
-                    />
-                    <small className="form-text">
-                        If you want your latest repos and a Github link, include
-                        your username
-                    </small>
-                </div>
-                <div className="form-group">
-                    <textarea
-                        placeholder="A short bio of yourself"
-                        name="bio"
-                        value={bio}
-                        onChange={(e) => onChange(e)}
-                    ></textarea>
-                    <small className="form-text">
-                        Tell us a little about yourself
-                    </small>
-                </div>
-
-                <div className="my-2">
-                    <button
-                        onClick={() => toggleSocialInputs(!displaySocialInputs)}
-                        type="button"
-                        className="btn btn-light"
-                    >
-                        Add Social Network Links
-                    </button>
-                    <span>Optional</span>
-                </div>
-
-                {displaySocialInputs && (
-                    <Fragment>
-                        <div className="form-group social-input">
-                            <i className="fab fa-twitter fa-2x"></i>
+            {/* TODO: Separate into FunctionComponent */}
+            <div className='d-flex align-items-center py-4 bg-body-tertiary border rounded'>
+                <div className='w-100 m-auto' style={{maxWidth: "330px", padding: "1rem"}}>
+                    <h1 className="h3 mb-3 fw-normal">Your Details</h1>
+                    <small>* = required field</small>
+                    <form className="form" onSubmit={(e) => onSubmit(e)}>
+                        <div className="form-text">
+                            <select
+                                className='form-select'
+                                name="status"
+                                defaultValue={status}
+                                onChange={(e) => onChange(e)}
+                            >
+                                <option value="0">* Select Professional Status</option>
+                                <option value="Developer">Developer</option>
+                                <option value="Junior Developer">
+                                    Junior Developer
+                                </option>
+                                <option value="Senior Developer">
+                                    Senior Developer
+                                </option>
+                                <option value="Manager">Manager</option>
+                                <option value="Student or Learning">
+                                    Student or Learning
+                                </option>
+                                <option value="Instructor">
+                                    Instructor or Teacher
+                                </option>
+                                <option value="Intern">Intern</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <small className="form-text">
+                                Give us an idea of where you are at in your career
+                            </small>
+                        </div>
+                        <div className="form-text mt-3">
                             <input
+                                className='form-control'
                                 type="text"
-                                placeholder="Twitter URL"
-                                name="twitter"
-                                value={twitter}
+                                placeholder="Company"
+                                name="company"
+                                defaultValue={company}
                                 onChange={(e) => onChange(e)}
                             />
+                            <small className="form-text">
+                                Could be your own company or one you work for
+                            </small>
                         </div>
-
-                        <div className="form-group social-input">
-                            <i className="fab fa-facebook fa-2x"></i>
+                        <div className="form-text mt-3">
                             <input
+                                className='form-control'
                                 type="text"
-                                placeholder="Facebook URL"
-                                name="facebook"
-                                value={facebook}
+                                placeholder="Website"
+                                name="website"
+                                defaultValue={website}
                                 onChange={(e) => onChange(e)}
                             />
+                            <small className="form-text">
+                                Could be your own or a company website
+                            </small>
                         </div>
-
-                        <div className="form-group social-input">
-                            <i className="fab fa-youtube fa-2x"></i>
+                        <div className="form-text mt-3">
                             <input
+                                className='form-control'
                                 type="text"
-                                placeholder="YouTube URL"
-                                name="youtube"
-                                value={youtube}
+                                placeholder="Location"
+                                name="location"
+                                defaultValue={location}
                                 onChange={(e) => onChange(e)}
                             />
+                            <small className="form-text">
+                                City & state suggested (eg. Boston, MA)
+                            </small>
                         </div>
-
-                        <div className="form-group social-input">
-                            <i className="fab fa-linkedin fa-2x"></i>
+                        <div className="form-text mt-3">
                             <input
+                                className='form-control'
                                 type="text"
-                                placeholder="Linkedin URL"
-                                name="linkedin"
-                                value={linkedin}
+                                placeholder="* Skills"
+                                name="skills"
+                                defaultValue={skills}
                                 onChange={(e) => onChange(e)}
                             />
+                            <small className="form-text">
+                                Please use comma separated values (eg.
+                                HTML,CSS,JavaScript,PHP)
+                            </small>
                         </div>
-
-                        <div className="form-group social-input">
-                            <i className="fab fa-instagram fa-2x"></i>
+                        <div className="form-text mt-3">
                             <input
+                                className='form-control'
                                 type="text"
-                                placeholder="Instagram URL"
-                                name="instagram"
-                                value={instagram}
+                                placeholder="Github Username"
+                                name="gitHubUsername"
+                                defaultValue={gitHubUsername}
                                 onChange={(e) => onChange(e)}
                             />
+                            <small className="form-text">
+                                If you want your latest repos and a Github link, include
+                                your username
+                            </small>
                         </div>
-                    </Fragment>
-                )}
+                        <div className="form-text mt-3">
+                            <textarea
+                                className='form-control'
+                                placeholder="A short bio of yourself"
+                                name="bio"
+                                defaultValue={bio}
+                                onChange={(e) => onChange(e)}
+                            ></textarea>
+                            <small className="form-text">
+                                Tell us a little about yourself
+                            </small>
+                        </div>
 
-                <input type="submit" className="btn btn-primary my-1" />
-                <Link className="btn btn-light my-1" to="/dashboard">
-                    Go Back
-                </Link>
-            </form>
+                        <div className="mt-3">
+                            <button
+                                onClick={() => toggleSocialInputs(!displaySocialInputs)}
+                                type="button"
+                                className="btn btn-light"
+                            >
+                                Add Social Network Links
+                            </button>
+                            <small className="form-text mx-3">
+                                Optional
+                            </small>
+                        </div>
+
+                        {displaySocialInputs && (
+                            <Fragment>
+                                <div className='border rounded p-3'>
+                                    <div className="form-text social-input">
+                                        <input
+                                            className='mx-3 rounded'
+                                            type="text"
+                                            placeholder="Twitter URL"
+                                            name="twitter"
+                                            defaultValue={twitter}
+                                            onChange={(e) => onChange(e)}
+                                        />
+                                        <i className="fab fa-twitter fa-1x"></i>
+                                    </div>
+
+                                    <div className="form-text social-input">
+                                        <input
+                                            className='mx-3 rounded'
+                                            type="text"
+                                            placeholder="Facebook URL"
+                                            name="facebook"
+                                            defaultValue={facebook}
+                                            onChange={(e) => onChange(e)}
+                                        />
+                                        <i className="fab fa-facebook fa-1x"></i>
+                                    </div>
+
+                                    <div className="form-text social-input">
+                                        <input
+                                            className='mx-3 rounded'
+                                            type="text"
+                                            placeholder="YouTube URL"
+                                            name="youtube"
+                                            defaultValue={youtube}
+                                            onChange={(e) => onChange(e)}
+                                        />
+                                        <i className="fab fa-youtube fa-1x"></i>
+                                    </div>
+
+                                    <div className="form-text social-input">
+                                        <input
+                                            className='mx-3 rounded'
+                                            type="text"
+                                            placeholder="Linkedin URL"
+                                            name="linkedin"
+                                            defaultValue={linkedin}
+                                            onChange={(e) => onChange(e)}
+                                        />
+                                        <i className="fab fa-linkedin fa-1x"></i>
+                                    </div>
+
+                                    <div className="form-text social-input">
+                                        <input
+                                            className='mx-3 rounded'
+                                            type="text"
+                                            placeholder="Instagram URL"
+                                            name="instagram"
+                                            defaultValue={instagram}
+                                            onChange={(e) => onChange(e)}
+                                        />
+                                        <i className="fab fa-instagram fa-1x"></i>
+                                    </div>
+                                </div>
+                            </Fragment>
+                        )}
+
+                        <input type="submit" className="btn btn-primary mt-4" />
+                        <Link className="btn btn-light mt-4 mx-2" to="/dashboard">
+                            Go Back
+                        </Link>
+                    </form>
+                </div>
+            </div>
         </Fragment>
     )
 }
