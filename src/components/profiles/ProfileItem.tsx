@@ -14,7 +14,12 @@ const ProfileItem: FunctionComponent<Props> = ({
 }) => {
     return (
         <div className="profile border rounded-3">
-            <img src={'https:' + avatar} alt="" className="border rounded-3" />
+            {avatar ?
+                    <img src={'https:' + avatar} alt="" className="border rounded-3" style={{height: "180px"}} /> 
+                :
+                    <div className="text-center bg-black p-5 rounded" style={{height: "180px", width: "180px"}}>
+                        <h1 className="far fa-user fa-4x"></h1>
+                    </div>}
             <div>
                 <h2>{name}</h2>
                 <p>
@@ -25,13 +30,13 @@ const ProfileItem: FunctionComponent<Props> = ({
                     View Profile
                 </Link>
             </div>
-            <ul>
+            <div>
                 {skills.slice(0, 4).map((skill: string, index: number) => (
-                    <li key={index} className="text-primary">
+                    <div key={index} className="text-primary">
                         <i className="fas fa-check"></i> {skill}
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     )
 }

@@ -15,36 +15,46 @@ const ProfileTop: FunctionComponent<Props> = ({
     },
 }) => {
     return (
-        <div className="d-flex justify-content-center border rounded-3 p-2" style={{"width": "330px"}}>
+        <div className="d-flex justify-content-center border rounded-3 p-4" style={{"width": "330px"}}>
             <div>
-                <img className="border rounded-3 my-1" src={'https:' + avatar} alt="" />
-                <h1 className="large">{name}</h1>
+                {avatar 
+                    && 
+                    <img src={'https:' + avatar} alt="" className="border rounded-3" style={{height: "200px"}} /> 
+                    || 
+                    <div className="text-center bg-black p-5 rounded" style={{height: "200px", width: "200px"}} >
+                        <h1 className="far fa-user fa-6x"></h1>
+                    </div>
+                }
+                <h1 className="large my-3">{name}</h1>
                 <p className="lead">
                     {status} {company && <span>at {company}</span>}
                 </p>
                 <p>{location && <span>{location}</span>}</p>
                 <div className="my-1">
                     {gitHubUsername && (
-                        <a
-                            href={'https://github.com/' + gitHubUsername}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i className="fas fa-brands fa-github fa-2x"></i>
-                        </a>
+                        <div>
+                            <a
+                                href={'https://github.com/' + gitHubUsername}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <i className="fas fa-brands fa-github me-2"></i>
+                                {gitHubUsername}
+                            </a>
+                        </div>
                     )}
                     {website && (
-                            <div className='d-flex'>
-                                <i className="fas fa-globe fa-2x"></i>
-                                <a
-                                    className='mx-2'
-                                    href={'https://' + website}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {website}
-                                </a>
-                            </div>
+                        <div>
+                            <a
+                                className='my-2'
+                                href={'https://' + website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <i className="fas fa-globe me-2"></i>
+                                {website}
+                            </a>
+                        </div>
                     )}
                     {social && social.twitter && (
                         <a
