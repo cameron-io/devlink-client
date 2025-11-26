@@ -4,12 +4,16 @@ import { connect } from 'react-redux'
 import { createProfile, getCurrentProfile } from '../../redux/dispatchers/profile'
 import { RootState } from '../../redux/store'
 
-type Props = { createProfile: any; profile: any; getCurrentProfile: any }
+type Props = {
+    createProfile: any;
+    profileData: any;
+    getCurrentProfile: any
+}
 
-const EditProfile: FunctionComponent<Props> = ({
-    profile: { profile, loading },
+const ProfileDetailsForm: FunctionComponent<Props> = ({
+    profileData,
     createProfile,
-    getCurrentProfile,
+    getCurrentProfile
 }) => {
     let navigate = useNavigate()
     const [formData, setFormData] = useState({
@@ -29,39 +33,6 @@ const EditProfile: FunctionComponent<Props> = ({
 
     const [displaySocialInputs, toggleSocialInputs] = useState(false)
 
-    useEffect(() => {
-        setFormData({
-            company: loading || !profile.company ? '' : profile.company,
-            website: loading || !profile.website ? '' : profile.website,
-            location: loading || !profile.location ? '' : profile.location,
-            status: loading || !profile.status ? '' : profile.status,
-            skills: loading || !profile.skills ? '' : profile.skills,
-            gitHubUsername: loading || !profile.gitHubUsername ? '' : profile.gitHubUsername,
-            bio: loading || !profile.bio ? '' : profile.bio,
-            twitter: loading || !profile.social ? '' : profile.twitter,
-            facebook: loading || !profile.social ? '' : profile.facebook,
-            linkedin: loading || !profile.social ? '' : profile.linkedin,
-            youtube: loading || !profile.social ? '' : profile.youtube,
-            instagram: loading || !profile.social ? '' : profile.instagram,
-        })
-    }, [
-        loading,
-        getCurrentProfile,
-        profile.bio,
-        profile.company,
-        profile.facebook,
-        profile.gitHubUsername,
-        profile.instagram,
-        profile.linkedin,
-        profile.location,
-        profile.skills,
-        profile.social,
-        profile.status,
-        profile.twitter,
-        profile.website,
-        profile.youtube,
-    ])
-
     const {
         company,
         website,
@@ -76,6 +47,43 @@ const EditProfile: FunctionComponent<Props> = ({
         youtube,
         instagram,
     } = formData
+
+    if (profileData.profile) {
+        var { profile, loading } = profileData
+
+        useEffect(() => {
+            setFormData({
+                company: loading || !profile.company ? '' : profile.company,
+                website: loading || !profile.website ? '' : profile.website,
+                location: loading || !profile.location ? '' : profile.location,
+                status: loading || !profile.status ? '' : profile.status,
+                skills: loading || !profile.skills ? '' : profile.skills,
+                gitHubUsername: loading || !profile.gitHubUsername ? '' : profile.gitHubUsername,
+                bio: loading || !profile.bio ? '' : profile.bio,
+                twitter: loading || !profile.social ? '' : profile.twitter,
+                facebook: loading || !profile.social ? '' : profile.facebook,
+                linkedin: loading || !profile.social ? '' : profile.linkedin,
+                youtube: loading || !profile.social ? '' : profile.youtube,
+                instagram: loading || !profile.social ? '' : profile.instagram,
+            })
+        }, [
+            loading,
+            getCurrentProfile,
+            profile.bio,
+            profile.company,
+            profile.facebook,
+            profile.gitHubUsername,
+            profile.instagram,
+            profile.linkedin,
+            profile.location,
+            profile.skills,
+            profile.social,
+            profile.status,
+            profile.twitter,
+            profile.website,
+            profile.youtube,
+        ])
+    }
 
     const onChange = (
         e:
@@ -92,12 +100,10 @@ const EditProfile: FunctionComponent<Props> = ({
 
     return (
         <Fragment>
-            <h1 className="large text-primary">Edit Your Profile</h1>
+            <h1 className="large text-primary">Customize your Profile</h1>
             <p className="lead">
-                <i className="fas fa-user"></i> Let's get some information to
-                make your profile stand out
+                <i className="fas fa-user"></i> Let's make your profile stand out.
             </p>
-            {/* TODO: Separate into FunctionComponent */}
             <div className='d-flex align-items-center py-4 bg-body-tertiary border rounded'>
                 <div className='w-100 m-auto' style={{maxWidth: "330px", padding: "1rem"}}>
                     <h1 className="h3 mb-3 fw-normal">Your Details</h1>
@@ -303,9 +309,9 @@ const EditProfile: FunctionComponent<Props> = ({
 }
 
 const mapStateToProps = (state: RootState) => ({
-    profile: state.profile,
+    profileData: state.profile,
 })
 
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
-    EditProfile
+    ProfileDetailsForm
 )

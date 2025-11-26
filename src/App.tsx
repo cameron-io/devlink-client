@@ -14,8 +14,7 @@ import Login from './pages/Auth/Login'
 // Dashboard
 import Dashboard from './pages/Dashboard/Dashboard'
 // Profile
-import CreateProfile from './pages/ProfileForms/CreateProfile'
-import EditProfile from './pages/ProfileForms/EditProfile'
+import ProfileDetailsForm from './components/profileForms/profileDetailsForm'
 import AddExperience from './pages/ProfileForms/AddExperience'
 import AddEducation from './pages/ProfileForms/AddEducation'
 import Profile from './pages/Profile/Profile'
@@ -58,13 +57,13 @@ const App = () => {
                             <Route
                                 path="/create-profile"
                                 element={
-                                    <PrivateRoute component={CreateProfile} />
+                                    <PrivateRoute component={ProfileDetailsForm} />
                                 }
                             />
                             <Route
                                 path="/edit-profile"
                                 element={
-                                    <PrivateRoute component={EditProfile} />
+                                    <PrivateRoute component={ProfileDetailsForm} />
                                 }
                             />
                             <Route
