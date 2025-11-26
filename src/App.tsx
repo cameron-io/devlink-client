@@ -25,9 +25,6 @@ import Alert from './components/layout/Alert'
 // Auth
 import { loadUserAction } from './redux/dispatchers/auth'
 import PrivateRoute from './components/routing/PrivateRoute'
-// Style
-//// Bootstrap
-import './styles/scss/styles.scss'
 
 const App = () => {
     useEffect(() => {
@@ -44,7 +41,7 @@ const App = () => {
                     {/* Navigation */}
                     <Navbar />
                     {/* Wrap in container for padding */}
-                    <section className="container" style={{minHeight: "85svh"}}>
+                    <section className="container py-5" style={{minHeight: "80svh"}}>
                         <Alert />
                         {/* Wrap other routes in a Switch */}
                         <Routes>

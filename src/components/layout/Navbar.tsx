@@ -17,7 +17,10 @@ const Navbar: FunctionComponent<Props> = ({
     const authLinks = (
         <ul className='navbar-nav me-auto mb-2 mb-md-0'>
             <li className='nav-item'>
-                <Link className='nav-link active' to="/profiles">Developers</Link>
+                <Link className='nav-link active' to="/profiles">
+                    <i className="fab fa-dev" />{' '}
+                    <span className="hide-sm">Developers</span>
+                </Link>
             </li>
             <li className='nav-item'>
                 <Link className='nav-link active' to="/dashboard">
@@ -49,25 +52,30 @@ const Navbar: FunctionComponent<Props> = ({
     )
 
     return (
-        <div>
-            <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4 px-4">
-                <div className='container-fluid'>
-                    <h1>
-                        <Link className='navbar-brand' to="/">
-                            <i className="fas fa-network-wired"></i> DevLink
-                        </Link>
-                    </h1>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    {!loading && (
-                        <Fragment>
-                            {isAuthenticated ? authLinks : guestLinks}
-                        </Fragment>
-                    )}
-                </div>
-            </nav>
-        </div>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3 border">
+            <h1>
+                <Link className='navbar-brand' to="/">
+                    <i className="fas fa-network-wired"></i> DevLink
+                </Link>
+            </h1>
+
+            <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+            >
+                <span className="navbar-toggler-icon"></span>
+            </button>
+
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                {!loading && (
+                    <Fragment>
+                        {isAuthenticated ? authLinks : guestLinks}
+                    </Fragment>
+                )}
+            </div>
+        </nav>
     )
 }
 
