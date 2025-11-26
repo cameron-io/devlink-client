@@ -216,7 +216,7 @@ const EditProfile: FunctionComponent<Props> = ({
                             <button
                                 onClick={() => toggleSocialInputs(!displaySocialInputs)}
                                 type="button"
-                                className="btn btn-light"
+                                className="btn border"
                             >
                                 Add Social Network Links
                             </button>

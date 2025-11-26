@@ -178,7 +178,7 @@ const CreateProfile: FunctionComponent<Props> = ({ createProfile }) => {
                             <button
                                 onClick={() => toggleSocialInputs(!displaySocialInputs)}
                                 type="button"
-                                className="btn btn-light"
+                                className="btn border"
                             >
                                 Add Social Network Links
                             </button>
