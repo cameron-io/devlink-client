@@ -1,18 +1,8 @@
 const Footer = () => {
     return (
-        <footer
-            style={{
-                height: 'auto',
-                width: '100%',
-            }}
-        >
+        <footer className="border-top h-auto py-5">
             <div
-                style={{
-                    margin: 'auto',
-                    maxWidth: '300px',
-                    textAlign: 'center',
-                    padding: '2rem 0rem',
-                }}
+                className="text-center"
             >
                 <p style={{ fontWeight: 'bold' }}>Connect to us</p>
                 <p
@@ -28,15 +18,10 @@ const Footer = () => {
                     style={{ padding: '0rem 0.5rem 0rem 1rem' }}
                 />
             </div>
-            <div
-                style={{
-                    textAlign: 'center',
-                    padding: '1rem 0rem',
-                    backgroundColor: '#343a40',
-                }}
+            <div className="text-center pt-1"
             >
-                <p style={{ color: 'white' }}>
-                    Copyright &copy; 2024 by Linkdev. All rights reserved.
+                <p>
+                    Copyright &copy; 2025 by Linkdev. All rights reserved.
                 </p>
             </div>
         </footer>
