@@ -21,7 +21,7 @@ const ProfileTop: FunctionComponent<Props> = ({
                 <Avatar avatar={avatar} size={200}></Avatar>
                 <h1 className="large my-3">{name}</h1>
                 <p className="lead">
-                    {status} {company && <span>at {company}</span>}
+                    {status} {company && <span>@ {company}</span>}
                 </p>
                 <p>{location && <span>{location}</span>}</p>
                 <div className="my-1">

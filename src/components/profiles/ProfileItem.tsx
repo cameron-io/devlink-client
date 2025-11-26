@@ -14,24 +14,31 @@ const ProfileItem: FunctionComponent<Props> = ({
     },
 }) => {
     return (
-        <div className="profile border rounded-3">
-            <Avatar avatar={avatar} size={180}></Avatar>
-            <div>
-                <h2>{name}</h2>
-                <p>
-                    {status} {company && <span> at {company}</span>}
-                </p>
-                <p className="my-1">{location && <span>{location}</span>}</p>
-                <Link to={`/profile/${id}`} className="btn btn-primary">
-                    View Profile
-                </Link>
-            </div>
-            <div>
-                {skills.slice(0, 4).map((skill: string, index: number) => (
-                    <div key={index} className="text-primary">
-                        <i className="fas fa-check"></i> {skill}
+        <div className="container border rounded-3 p-4">
+            <div className='row'>
+                <div className='col m-4' style={{maxWidth: 180}}>
+                    <Avatar avatar={avatar} size={180}></Avatar>
+                </div>
+                <div className='col border-end'>
+                    <div>
+                        <h2>{name}</h2>
+                        <p>{status} {company && <span> @ {company}</span>}</p>
+                        <p>{location && <span>{location}</span>}</p>
+                        <Link to={`/profile/${id}`} className="btn btn-primary">
+                            View Profile
+                        </Link>
                     </div>
-                ))}
+                </div>
+                <div className='col'>
+                    <div>
+                        <h4 className='text-primary'>Skills</h4>
+                        {skills.slice(0, 4).map((skill: string, index: number) => (
+                            <div key={index} className="text-tertiary">
+                                <i className="fas fa-check"></i> {skill}
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     )
