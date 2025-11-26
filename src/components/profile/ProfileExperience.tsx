@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react'
 import Moment from 'react-moment'
-import './ProfileExperience.css'
 
 type Props = { experience: any }
 

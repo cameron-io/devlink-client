@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { FunctionComponent } from 'react'
-import './ProfileItem.css'
 
 type Props = { profile: any }
 

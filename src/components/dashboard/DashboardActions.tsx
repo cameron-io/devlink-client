@@ -1,5 +1,4 @@
 import { FormProps, Link } from 'react-router-dom'
-import './DashboardActions.css'
 
 const DashboardActions = (_props: FormProps) => {
     return (
