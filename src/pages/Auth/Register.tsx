@@ -53,7 +53,7 @@ const Register: FunctionComponent<Props> = ({
 
     return (
         <Fragment>
-            <h1 className="large text-primary">Create Your Account.</h1>
+            <h1 className="text-primary">Create Your Account.</h1>
             <p className='lead'>Please fill in the required fields.</p>
             <div className='d-flex align-items-center py-4 bg-body-tertiary border rounded'>
                 <div className='w-100 m-auto mt-4' style={{maxWidth: "330px", padding: "1rem"}}>

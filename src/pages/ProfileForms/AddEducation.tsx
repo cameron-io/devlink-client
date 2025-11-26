@@ -34,7 +34,7 @@ const AddEducation: FunctionComponent<Props> = ({ addEducation }) => {
 
     return (
         <Fragment>
-            <h1 className="large text-primary">Add Your Education</h1>
+            <h1 className="text-primary">Add Your Education</h1>
             <p className="lead">
                 <i className="fas fa-code-branch"></i> Add any school or
                 bootcamp you have attended

@@ -26,7 +26,7 @@ const Dashboard: FunctionComponent<Props> = ({
 
     let page = (
         <Fragment>
-            <h1 className="large text-primary">Dashboard</h1>
+            <h1 className="text-primary">Dashboard</h1>
             <p className="lead">
                 <i className="fa fa-user"></i> Welcome {user && user.name}
             </p>

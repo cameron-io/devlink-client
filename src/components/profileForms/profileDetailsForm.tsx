@@ -100,7 +100,7 @@ const ProfileDetailsForm: FunctionComponent<Props> = ({
 
     return (
         <Fragment>
-            <h1 className="large text-primary">Customize your Profile</h1>
+            <h1 className="text-primary">Customize your Profile</h1>
             <p className="lead">
                 <i className="fas fa-user"></i> Let's make your profile stand out.
             </p>

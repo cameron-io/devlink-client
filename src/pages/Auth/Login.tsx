@@ -46,7 +46,7 @@ const Login: FunctionComponent<Props> = ({ loginAction, isAuthenticated }) => {
     // Replace <a href></a> with <Link to></Link>
     return (
         <Fragment>
-            <h1 className="large text-primary">Sign Into Your Account.</h1>
+            <h1 className="text-primary">Sign Into Your Account.</h1>
             <p className='lead'>Let's get you connected.</p>
             <div className='d-flex align-items-center py-4 bg-body-tertiary border rounded'>
                 <div className='w-100 m-auto mt-4' style={{maxWidth: "330px", padding: "1rem"}}>

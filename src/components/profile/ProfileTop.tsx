@@ -19,7 +19,7 @@ const ProfileTop: FunctionComponent<Props> = ({
         <div className="d-flex justify-content-center border rounded-3 p-4 mb-4">
             <div>
                 <Avatar avatar={avatar} size={200}></Avatar>
-                <h1 className="large my-3">{name}</h1>
+                <h1 className="my-3">{name}</h1>
                 <p className="lead">
                     {status} {company && <span>@ {company}</span>}
                 </p>
