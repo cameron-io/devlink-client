@@ -30,7 +30,7 @@ const Dashboard: FunctionComponent<Props> = ({
             <p className="lead">
                 <i className="fa fa-user"></i> Welcome {user && user.name}
             </p>
-            {profile != null ? (
+            {profile && (
                 <Fragment>
                     <div className='text-end'>
                         <DashboardActions />
@@ -54,7 +54,7 @@ const Dashboard: FunctionComponent<Props> = ({
                         </button>
                     </div>
                 </Fragment>
-            ) : (
+            ) || (
                 <Fragment>
                     <p>
                         You have not yet created a profile, please add some
