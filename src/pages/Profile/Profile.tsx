@@ -40,7 +40,7 @@ const Profile: FunctionComponent<Props> = ({
                     {auth.isAuthenticated &&
                         auth.loading === false &&
                         auth.user!.id === profile.user.id && (
-                            <Link to="/edit-profile" className="btn btn-light m-2">
+                            <Link to="/edit-profile" className="btn border m-2">
                                 Edit Profile
                             </Link>
                         )}

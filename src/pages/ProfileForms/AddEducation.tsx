@@ -135,7 +135,7 @@ const AddEducation: FunctionComponent<Props> = ({ addEducation }) => {
                             <label htmlFor="floatingInput">Description</label>
                         </div>
                         <input type="submit" className="btn btn-primary my-1" />
-                        <Link className="btn btn-light my-3 mx-2" to="/dashboard">
+                        <Link className="btn border my-3 mx-2" to="/dashboard">
                             Go Back
                         </Link>
                     </form>

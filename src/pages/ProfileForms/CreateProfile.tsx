@@ -254,7 +254,7 @@ const CreateProfile: FunctionComponent<Props> = ({ createProfile }) => {
                         )}
 
                         <input type="submit" className="btn btn-primary mt-4" />
-                        <Link className="btn btn-light mt-4 mx-2" to="/dashboard">
+                        <Link className="btn border mt-4 mx-2" to="/dashboard">
                             Go Back
                         </Link>
                     </form>
