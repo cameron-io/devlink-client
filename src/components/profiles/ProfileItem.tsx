@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FunctionComponent } from 'react'
+import Avatar from '../../components/profile/ProfileAvatar'
 
 type Props = { profile: any }
 
@@ -14,12 +15,7 @@ const ProfileItem: FunctionComponent<Props> = ({
 }) => {
     return (
         <div className="profile border rounded-3">
-            {avatar ?
-                    <img src={'https:' + avatar} alt="" className="border rounded-3" style={{height: "180px"}} /> 
-                :
-                    <div className="text-center bg-black p-5 rounded" style={{height: "180px", width: "180px"}}>
-                        <h1 className="far fa-user fa-4x"></h1>
-                    </div>}
+            <Avatar avatar={avatar} size={180}></Avatar>
             <div>
                 <h2>{name}</h2>
                 <p>

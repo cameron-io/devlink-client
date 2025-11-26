@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 import { Profile } from '../../types/common'
+import Avatar from './ProfileAvatar'
 
 type Props = { profile: Profile }
 
@@ -15,16 +16,9 @@ const ProfileTop: FunctionComponent<Props> = ({
     },
 }) => {
     return (
-        <div className="d-flex justify-content-center border rounded-3 p-4" style={{"width": "330px"}}>
+        <div className="d-flex justify-content-center border rounded-3 p-4 mb-4">
             <div>
-                {avatar 
-                    && 
-                    <img src={'https:' + avatar} alt="" className="border rounded-3" style={{height: "200px"}} /> 
-                    || 
-                    <div className="text-center bg-black p-5 rounded" style={{height: "200px", width: "200px"}} >
-                        <h1 className="far fa-user fa-6x"></h1>
-                    </div>
-                }
+                <Avatar avatar={avatar} size={200}></Avatar>
                 <h1 className="large my-3">{name}</h1>
                 <p className="lead">
                     {status} {company && <span>at {company}</span>}
