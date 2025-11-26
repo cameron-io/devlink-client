@@ -35,11 +35,8 @@ const EditProfile: FunctionComponent<Props> = ({
             website: loading || !profile.website ? '' : profile.website,
             location: loading || !profile.location ? '' : profile.location,
             status: loading || !profile.status ? '' : profile.status,
-            skills: loading || !profile.skills ? '' : profile.company,
-            gitHubUsername:
-                loading || !profile.gitHubUsername
-                    ? ''
-                    : profile.gitHubUsername,
+            skills: loading || !profile.skills ? '' : profile.skills,
+            gitHubUsername: loading || !profile.gitHubUsername ? '' : profile.gitHubUsername,
             bio: loading || !profile.bio ? '' : profile.bio,
             twitter: loading || !profile.social ? '' : profile.twitter,
             facebook: loading || !profile.social ? '' : profile.facebook,
