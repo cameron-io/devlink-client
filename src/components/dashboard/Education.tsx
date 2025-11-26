@@ -19,6 +19,7 @@ const Education: FunctionComponent<Props> = ({
                 (
                     <p>No Entries.</p>
                 ) : (
+                <div className="table-responsive">
                     <table className="table">
                     <thead>
                         <tr>
@@ -57,6 +58,7 @@ const Education: FunctionComponent<Props> = ({
                         ))}
                     </tbody>
                     </table>
+                </div>
                 )
             }
         </Fragment>

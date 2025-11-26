@@ -19,44 +19,46 @@ const Experience: FunctionComponent<Props> = ({
                 (
                     <p>No Entries.</p>
                 ) : (
+                <div className="table-responsive">
                     <table className="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Company</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Start Date</th>
-                            <th scope="col">End Date</th>
-                            <th scope="col">Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {experience.map((exp: any) => (
-                            <tr key={exp.id}>
-                                <td>{exp.company}</td>
-                                <td>{exp.title}</td>
-                                <td><Moment format="YYYY/MM/DD">{exp.from}</Moment></td>
-                                <td>
-                                    {exp.to === null ?
-                                        (
-                                            'Now'
-                                        ) : (
-                                            <Moment format="YYYY/MM/DD">{exp.end}</Moment>
-                                        )
-                                    }
-                                </td>
-                                <td>{exp.description}</td>
-                                <td>
-                                    <button
-                                        onClick={() => deleteExperience(exp.id)}
-                                        className="btn btn-danger"
-                                    >
-                                        <i className="fas fa-trash"></i>
-                                    </button>
-                                </td>
+                        <thead>
+                            <tr>
+                                <th scope="col">Company</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">End Date</th>
+                                <th scope="col">Description</th>
                             </tr>
-                        ))}
-                    </tbody>
+                        </thead>
+                        <tbody>
+                            {experience.map((exp: any) => (
+                                <tr key={exp.id}>
+                                    <td>{exp.company}</td>
+                                    <td>{exp.title}</td>
+                                    <td><Moment format="YYYY/MM/DD">{exp.from}</Moment></td>
+                                    <td>
+                                        {exp.to === null ?
+                                            (
+                                                'Now'
+                                            ) : (
+                                                <Moment format="YYYY/MM/DD">{exp.end}</Moment>
+                                            )
+                                        }
+                                    </td>
+                                    <td>{exp.description}</td>
+                                    <td>
+                                        <button
+                                            onClick={() => deleteExperience(exp.id)}
+                                            className="btn btn-danger"
+                                        >
+                                            <i className="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </table>
+                </div>
                 )
             }
             <br></br>
