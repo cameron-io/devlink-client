@@ -12,15 +12,15 @@ import { StateAuth, StateProfile } from '../../types/common'
 type Props = {
     getCurrentProfile: () => Promise<void>
     deleteAccount: () => Promise<void>
-    auth: StateAuth
-    profile: StateProfile
+    authData: StateAuth
+    profileData: StateProfile
 }
 
 const Dashboard: FunctionComponent<Props> = ({
     getCurrentProfile,
     deleteAccount,
-    auth: { user },
-    profile: { profile, loading },
+    authData: { user },
+    profileData: { profile, loading },
 }) => {
     useEffect(() => {getCurrentProfile()}, [getCurrentProfile])
 
@@ -72,8 +72,8 @@ const Dashboard: FunctionComponent<Props> = ({
 }
 
 const mapStateToProps = (state: RootState) => ({
-    auth: state.auth,
-    profile: state.profile,
+    authData: state.auth,
+    profileData: state.profile,
 })
 
 export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(

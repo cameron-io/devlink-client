@@ -6,11 +6,11 @@ import Spinner from '../../components/layout/Spinner'
 import { RootState } from '../../redux/store'
 import './Profiles.css'
 
-type Props = { profile: any; getProfiles: any }
+type Props = { profileData: any; getProfiles: any }
 
 const Profiles: FunctionComponent<Props> = ({
     getProfiles,
-    profile: { profiles, loading },
+    profileData: { profiles, loading },
 }) => {
     useEffect(() => {
         getProfiles()
@@ -46,7 +46,7 @@ const Profiles: FunctionComponent<Props> = ({
 }
 
 const mapStateToProps = (state: RootState) => ({
-    profile: state.profile,
+    profileData: state.profile,
 })
 
 export default connect(mapStateToProps, { getProfiles })(Profiles)

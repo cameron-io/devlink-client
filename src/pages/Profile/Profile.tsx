@@ -10,14 +10,14 @@ import { StateAuth, StateProfile } from '../../types/common'
 
 type Props = {
     getProfileById: (userId: string) => Promise<void>
-    profile: StateProfile
-    auth: StateAuth
+    profileData: StateProfile
+    authData: StateAuth
 }
 
 const Profile: FunctionComponent<Props> = ({
     getProfileById,
-    profile: { profile, loading },
-    auth,
+    profileData: { profile, loading },
+    authData,
 }) => {
     const id: string = useParams().id!
 
@@ -34,9 +34,9 @@ const Profile: FunctionComponent<Props> = ({
                     <Link to="/profiles" className="btn btn-primary m-2">
                         Back to Profiles
                     </Link>
-                    {auth.isAuthenticated &&
-                        auth.loading === false &&
-                        auth.user!.id === profile.user.id && (
+                    {authData.isAuthenticated &&
+                        authData.loading === false &&
+                        authData.user!.id === profile.user.id && (
                             <Link to="/edit-profile" className="btn border m-2">
                                 Edit Profile
                             </Link>
@@ -58,8 +58,8 @@ const Profile: FunctionComponent<Props> = ({
 }
 
 const mapStateToProps = (state: RootState) => ({
-    profile: state.profile,
-    auth: state.auth,
+    profileData: state.profile,
+    authData: state.auth,
 })
 
 export default connect(mapStateToProps, { getProfileById })(Profile)

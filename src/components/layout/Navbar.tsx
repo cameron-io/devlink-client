@@ -6,12 +6,12 @@ import type { RootState } from '../../redux/store'
 import { StateAuth } from '../../types/common'
 
 type Props = {
-    auth: StateAuth;
+    authData: StateAuth;
     logoutAction: () => Promise<void>
 }
 
 const Navbar: FunctionComponent<Props> = ({
-    auth: { isAuthenticated, loading },
+    authData: { isAuthenticated, loading },
     logoutAction,
 }) => {
     const authLinks = (
@@ -79,7 +79,7 @@ const Navbar: FunctionComponent<Props> = ({
 }
 
 const mapStateToProps = (state: RootState) => ({
-    auth: state.auth,
+    authData: state.auth,
 })
 
 export default connect(mapStateToProps, { logoutAction })(Navbar)

@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import { RootState } from '../../redux/store'
 import { FunctionComponent } from 'react'
 
-type Props = { component: FunctionComponent; auth: any }
+type Props = { component: FunctionComponent; authData: any }
 
 const PrivateRoute: FunctionComponent<Props> = ({
     component: Component,
-    auth: { isAuthenticated, loading },
+    authData: { isAuthenticated, loading },
     ...props
 }) =>
     !isAuthenticated && !loading ? (
@@ -19,7 +19,7 @@ const PrivateRoute: FunctionComponent<Props> = ({
     )
 
 const mapStateToProps = (state: RootState) => ({
-    auth: state.auth,
+    authData: state.auth,
 })
 
 export default connect(mapStateToProps)(PrivateRoute)
