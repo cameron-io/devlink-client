@@ -40,7 +40,7 @@ const App = () => {
                     {/* Navigation */}
                     <Navbar />
                     {/* Wrap in container for padding */}
-                    <section className="container py-5" style={{minHeight: "80svh"}}>
+                    <section className="container my-5 py-5" style={{minHeight: "80svh"}}>
                         <Alert />
                         {/* Wrap other routes in a Switch */}
                         <Routes>
