@@ -1,18 +1,41 @@
+import { Fragment } from 'react'
 import { FormProps, Link } from 'react-router-dom'
 
 const DashboardActions = (_props: FormProps) => {
     return (
-        <div className="dash-buttons" style={{ marginBottom: '2rem' }}>
-            <Link to="/edit-profile" className="btn border m-2">
-                <i className="fas fa-user-circle text-primary"></i> Edit Profile
-            </Link>
-            <Link to="/add-experience" className="btn border m-2">
-                <i className="fab fa-black-tie text-primary"></i> Add Experience
-            </Link>
-            <Link to="/add-education" className="btn border m-2">
-                <i className="fas fa-graduation-cap text-primary"></i> Add Education
-            </Link>
-        </div>
+        <Fragment>
+            <div className="dropdown">
+                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Manage Profile
+                </button>
+                <ul className="dropdown-menu">
+                    <li>
+                        <Link className='dropdown-item' to="/edit-profile">
+                            <span>
+                                <i className="fas fa-user-circle text-primary" style={{width: 25}}></i>
+                                Edit Profile
+                            </span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className='dropdown-item' to="/add-experience">
+                            <span>
+                                <i className="fab fa-black-tie text-primary" style={{width: 25}}></i>
+                                Add Experience
+                            </span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className='dropdown-item' to="/add-education">
+                            <span>
+                                <i className="fas fa-graduation-cap text-primary" style={{width: 25}}></i>
+                                Add Education
+                            </span>
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+        </Fragment>
     )
 }
 

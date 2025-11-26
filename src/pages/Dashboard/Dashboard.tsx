@@ -32,7 +32,10 @@ const Dashboard: FunctionComponent<Props> = ({
             </p>
             {profile != null ? (
                 <Fragment>
-                    <DashboardActions />
+                    <div className='text-end'>
+                        <DashboardActions />
+                    </div>
+                    <br></br>
                     <Experience experience={profile.experience!} />
                     <Education education={profile.education!} />
 
