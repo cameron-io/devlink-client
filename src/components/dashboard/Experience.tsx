@@ -25,8 +25,8 @@ const Experience: FunctionComponent<Props> = ({
                             <tr>
                                 <th scope="col">Company</th>
                                 <th scope="col">Title</th>
-                                <th scope="col">Start Date</th>
-                                <th scope="col">End Date</th>
+                                <th scope="col">Started</th>
+                                <th scope="col">Until</th>
                                 <th scope="col">Description</th>
                             </tr>
                         </thead>

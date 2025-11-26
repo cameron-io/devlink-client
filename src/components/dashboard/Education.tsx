@@ -25,8 +25,8 @@ const Education: FunctionComponent<Props> = ({
                         <tr>
                             <th scope="col">School</th>
                             <th scope="col">Degree</th>
-                            <th scope="col">Start Date</th>
-                            <th scope="col">End Date</th>
+                            <th scope="col">Started</th>
+                            <th scope="col">Until</th>
                             <th scope="col">Description</th>
                         </tr>
                     </thead>
