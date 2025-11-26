@@ -20,7 +20,7 @@ const Education: FunctionComponent<Props> = ({
                     <p>No Entries.</p>
                 ) : (
                 <div className="table-responsive">
-                    <table className="table">
+                    <table className="table table-striped-columns">
                     <thead>
                         <tr>
                             <th scope="col">School</th>
@@ -46,14 +46,12 @@ const Education: FunctionComponent<Props> = ({
                                     }
                                 </td>
                                 <td>{edu.description}</td>
-                                <td>
-                                    <button
-                                        onClick={() => deleteEducation(edu.id)}
-                                        className="btn btn-danger"
-                                    >
-                                        <i className="fas fa-trash"></i>
-                                    </button>
-                                </td>
+                                <button
+                                    onClick={() => deleteEducation(edu.id)}
+                                    className="btn btn-danger"
+                                >
+                                    <i className="fas fa-trash"></i>
+                                </button>
                             </tr>
                         ))}
                     </tbody>

@@ -20,7 +20,7 @@ const Experience: FunctionComponent<Props> = ({
                     <p>No Entries.</p>
                 ) : (
                 <div className="table-responsive">
-                    <table className="table">
+                    <table className="table table-striped-columns">
                         <thead>
                             <tr>
                                 <th scope="col">Company</th>
@@ -46,14 +46,12 @@ const Experience: FunctionComponent<Props> = ({
                                         }
                                     </td>
                                     <td>{exp.description}</td>
-                                    <td>
-                                        <button
-                                            onClick={() => deleteExperience(exp.id)}
-                                            className="btn btn-danger"
-                                        >
-                                            <i className="fas fa-trash"></i>
-                                        </button>
-                                    </td>
+                                    <button
+                                        onClick={() => deleteExperience(exp.id)}
+                                        className="btn btn-danger"
+                                    >
+                                        <i className="fas fa-trash"></i>
+                                    </button>
                                 </tr>
                             ))}
                         </tbody>
