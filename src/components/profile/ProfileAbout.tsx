@@ -14,56 +14,73 @@ const ProfileAbout: FunctionComponent<Props> = ({
     },
 }) => (
     <Fragment>
-        <div className="border rounded-3 p-2">
-            {bio && (
-                <Fragment>
-                    <h2 className="text-primary">About Me</h2>
-                    <p>{bio}</p>
-                    <div className="line"></div>
-                </Fragment>
-            )}
-            <h2 className="text-primary">Skill Set</h2>
-            <div className="skills">
-                {skills.map((skill: string, index: number) => (
-                    <div key={index} className="p-1">
-                        <i className="fa fa-check"></i> {skill}
+        {bio && (
+            <Fragment>
+                <div className="card">
+                    <h5 className="card-header">
+                        About Me
+                    </h5>
+                    <div className="card-body">
+                        <p>{bio}</p>
                     </div>
-                ))}
+                </div>
+            </Fragment>
+        )}
+        <Fragment>
+            <div className="card mt-4">
+                <h5 className="card-header">
+                    Skill Set
+                </h5>
+                <div className="card-body">
+                    <div className='container'>
+                        <div className='row'>
+                            {skills.map((skill: string, index: number) => (
+                                <div className='col' key={index}>
+                                    <i className="fa fa-check"></i> {skill}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Fragment>
+        <div className="card mt-4">
+            <h5 className="card-header">Experience</h5>
+            <div className="card-body">
+                {experience.length > 0 ? (
+                    <Fragment>
+                        {experience.map(
+                            (experience: any) => (
+                                <ProfileExperience
+                                    key={experience.id}
+                                    experience={experience}
+                                />
+                            )
+                        )}
+                    </Fragment>
+                ) : (
+                    <p>No experience credentials</p>
+                )}
             </div>
         </div>
-        <div className="border rounded-3 p-2 my-4">
-            <h2 className="text-primary">Experience</h2>
-            {experience.length > 0 ? (
-                <Fragment>
-                    {experience.map(
-                        (experience: any) => (
-                            <ProfileExperience
-                                key={experience.id}
-                                experience={experience}
-                            />
-                        )
-                    )}
-                </Fragment>
-            ) : (
-                <p>No experience credentials</p>
-            )}
-        </div>
-        <div className="border rounded-3 p-2">
-            <h2 className="text-primary">Education</h2>
-            {education.length > 0 ? (
-                <Fragment>
-                    {education.map(
-                        (education: any) => (
-                            <ProfileEducation
-                                key={education.id}
-                                education={education}
-                            />
-                        )
-                    )}
-                </Fragment>
-            ) : (
-                <p>No experience credentials</p>
-            )}
+        <div className="card mt-4">
+            <h5 className="card-header">Education</h5>
+            <div className="card-body">
+                {education.length > 0 ? (
+                    <Fragment>
+                        {education.map(
+                            (education: any) => (
+                                <ProfileEducation
+                                    key={education.id}
+                                    education={education}
+                                />
+                            )
+                        )}
+                    </Fragment>
+                ) : (
+                    <p>No experience credentials</p>
+                )}
+            </div>
         </div>
     </Fragment>
 )

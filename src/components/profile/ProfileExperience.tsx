@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, Fragment } from 'react'
 import Moment from 'react-moment'
 
 type Props = { experience: any }
@@ -7,19 +7,19 @@ const ProfileExperience: FunctionComponent<Props> = ({
     experience: { company, title, to, from, description },
 }) => {
     return (
-        <div>
-            <h3>{company}</h3>
-            <p>
+        <Fragment>
+            <h5 className="card-title">{company}</h5>
+            <p className="card-text">
                 <Moment format="YYYY/MM/DD">{from}</Moment> -{' '}
                 {!to ? 'Now' : <Moment format="YYYY/MM/DD">{to}</Moment>}
             </p>
-            <p>
+            <p className="card-text">
                 <strong>Position: </strong> {title}
             </p>
-            <p>
+            <p className="card-text">
                 <strong>Description: </strong> {description}
             </p>
-        </div>
+        </Fragment>
     )
 }
 
