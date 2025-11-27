@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FunctionComponent } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import Avatar from '../../components/profile/ProfileAvatar'
 import { Profile } from '../../types/common'
 
@@ -35,7 +37,7 @@ const ProfileItem: FunctionComponent<Props> = ({
                         <h4 className='text-primary'>Skills</h4>
                         {skills.slice(0, 4).map((skill: string, index: number) => (
                             <div key={index} className="text-tertiary">
-                                <i className="fas fa-check"></i> {skill}
+                                <FontAwesomeIcon icon={faCheck} className='me-2'/>{skill}
                             </div>
                         ))}
                     </div>

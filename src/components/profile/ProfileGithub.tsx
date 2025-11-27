@@ -1,5 +1,7 @@
 import { FunctionComponent, useEffect, Fragment } from 'react'
 import { connect } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { RootState } from '../../redux/store'
 import { getGithubRepos } from '../../redux/dispatchers/profile';
 import Spinner from '../layout/Spinner';
@@ -40,7 +42,7 @@ const ProfileGithub: FunctionComponent<Props> = ({
                                                 </a>
                                             </h4>
                                             <p className='col text-end'>
-                                                <i className="fas fa-star me-1 text-warning"></i>
+                                                <FontAwesomeIcon icon={faStar} className='me-1 text-warning'/>
                                                 {repo.stargazers_count}
                                             </p>
                                         </div>

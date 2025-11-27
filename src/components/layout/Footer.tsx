@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons'
+
 const Footer = () => {
     return (
         <footer className="border-top h-auto py-5">
@@ -5,20 +8,11 @@ const Footer = () => {
                 className="text-center"
             >
                 <p style={{ fontWeight: 'bold' }}>Connect to us</p>
-                <p
-                    className="fa-brands fa-facebook"
-                    style={{ padding: '0rem 0.5rem 0rem 0.5rem' }}
-                />
-                <p
-                    className="fa-brands fa-x-twitter"
-                    style={{ padding: '0rem 0.5rem 0rem 1rem' }}
-                />
-                <p
-                    className="fa-brands fa-instagram"
-                    style={{ padding: '0rem 0.5rem 0rem 1rem' }}
-                />
+                <FontAwesomeIcon icon={faFacebook}/>
+                <FontAwesomeIcon icon={faXTwitter} className='ms-2'/>
+                <FontAwesomeIcon icon={faInstagram} className='ms-2'/>
             </div>
-            <div className="text-center pt-1"
+            <div className="text-center mt-3"
             >
                 <p>
                     Copyright &copy; 2025 by Linkdev. All rights reserved.

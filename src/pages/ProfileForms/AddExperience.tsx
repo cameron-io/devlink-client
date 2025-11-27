@@ -1,6 +1,8 @@
 import { Fragment, FunctionComponent, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCodeBranch } from '@fortawesome/free-solid-svg-icons'
 import { addExperience } from '../../redux/dispatchers/profile'
 
 type Props = { addExperience: any }
@@ -36,8 +38,8 @@ const AddExperience: FunctionComponent<Props> = ({ addExperience }) => {
         <Fragment>
             <h1 className="text-primary">Add An Experience</h1>
             <p className="lead">
-                <i className="fas fa-code-branch"></i> Add any
-                developer/programming positions that you have had in the past
+                <FontAwesomeIcon icon={faCodeBranch} className='me-2'/>
+                Add any developer/programming positions that you have had in the past
             </p>
             <div className='d-flex align-items-center py-4 bg-body-tertiary border rounded'>
                 <div className='w-100 m-auto mt-4' style={{maxWidth: "330px", padding: "1rem"}}>

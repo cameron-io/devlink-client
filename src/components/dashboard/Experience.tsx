@@ -1,8 +1,11 @@
 import { Fragment, FunctionComponent } from 'react'
 import Moment from 'react-moment'
 import { connect } from 'react-redux'
-import { deleteExperience } from '../../redux/dispatchers/profile'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faBlackTie } from '@fortawesome/free-brands-svg-icons'
+import { deleteExperience } from '../../redux/dispatchers/profile'
 
 type Props = {
     experience?: any[]
@@ -51,7 +54,7 @@ const Experience: FunctionComponent<Props> = ({
                                         onClick={() => deleteExperience(exp.id)}
                                         className="btn btn-danger"
                                     >
-                                        <i className="fas fa-trash"></i>
+                                        <FontAwesomeIcon icon={faTrash} className='text-danger'/>
                                     </button>
                                 </tr>
                             ))}
@@ -63,7 +66,7 @@ const Experience: FunctionComponent<Props> = ({
             <div className='border text-center rounded-3 mt-3' style={{width: 200}}>
                 <Link className='btn' to="/add-experience">
                     <span>
-                        <i className="fab fa-black-tie text-primary" style={{width: 25}}></i>
+                        <FontAwesomeIcon icon={faBlackTie} className='text-primary me-2'/>
                         Add Experience
                     </span>
                 </Link>

@@ -1,6 +1,9 @@
 import { Fragment, FunctionComponent } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignOut, faUser, faNetworkWired } from '@fortawesome/free-solid-svg-icons'
+import { faDev } from '@fortawesome/free-brands-svg-icons'
 import { logoutAction } from '../../redux/dispatchers/auth'
 import type { RootState } from '../../redux/store'
 import { StateAuth } from '../../types/common'
@@ -18,19 +21,19 @@ const Navbar: FunctionComponent<Props> = ({
         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li className='nav-item border rounded-3 px-3'>
                 <Link className='nav-link' to="/profiles">
-                    <i className="fab fa-dev" />{' '}
+                    <FontAwesomeIcon icon={faDev} className='me-2'/>
                     <span className="hide-sm">Developers</span>
                 </Link>
             </li>
             <li className='nav-item border rounded-3 px-3 mt-2'>
                 <Link className='nav-link' to="/dashboard">
-                    <i className="fa fa-user" />{' '}
+                    <FontAwesomeIcon icon={faUser} className='me-2'/>
                     <span className="hide-sm">Dashboard</span>
                 </Link>
             </li>
             <li className='nav-item border rounded-3 px-3 mt-2'>
                 <Link className='nav-link' onClick={logoutAction} to="#!">
-                    <i className="fa fa-sign-out-alt" />{' '}
+                    <FontAwesomeIcon icon={faSignOut} className='me-2'/>
                     <span className="hide-sm">Logout</span>
                 </Link>
             </li>
@@ -58,7 +61,7 @@ const Navbar: FunctionComponent<Props> = ({
                 <span className="navbar-toggler-icon"></span>
                 </button>
                 <Link className='navbar-brand' to="/">
-                    DevLink<i className="fas fa-network-wired ms-2"></i>
+                    DevLink<FontAwesomeIcon icon={faNetworkWired} className='ms-2'/>
                 </Link>
                 <div className="offcanvas offcanvas-start" tabIndex={-1} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style={{maxWidth: "200px"}}>
                 <div className="offcanvas-header">

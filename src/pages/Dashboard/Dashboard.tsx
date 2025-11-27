@@ -1,6 +1,8 @@
 import { Fragment, FunctionComponent, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { getCurrentProfile, deleteAccount } from '../../redux/dispatchers/profile'
 import DashboardActions from '../../components/dashboard/DashboardActions'
 import Experience from '../../components/dashboard/Experience'
@@ -35,7 +37,8 @@ const Dashboard: FunctionComponent<Props> = ({
                 </div>
                 <div className='row'>
                     <p className="col lead">
-                        <i className="fa fa-user"></i> Welcome {user && user.name}
+                        <FontAwesomeIcon icon={faUser} className='me-2'/>
+                        Welcome {user && user.name}
                     </p>
                 </div>
             </div>

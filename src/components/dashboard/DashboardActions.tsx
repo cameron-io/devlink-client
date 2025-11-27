@@ -1,5 +1,7 @@
 import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleUser, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 type DashboardActionsProps = {
     deleteAccount: any
@@ -18,7 +20,7 @@ const DashboardActions = ({
                     <li>
                         <Link className='dropdown-item' to="/edit-profile">
                             <span>
-                                <i className="fas fa-user-circle text-primary" style={{width: 25}}></i>
+                                <FontAwesomeIcon icon={faCircleUser} className='text-primary me-2'/>
                                 Edit Profile
                             </span>
                         </Link>
@@ -35,7 +37,7 @@ const DashboardActions = ({
                             }}
                         >
                             <span>
-                                <i className="far fa-trash-alt text-danger" style={{width: 25}}></i>
+                                <FontAwesomeIcon icon={faTrashAlt} className='text-danger me-2'/>
                                 Delete My Account
                             </span>
                         </button>

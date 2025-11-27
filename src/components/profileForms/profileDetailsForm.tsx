@@ -1,6 +1,9 @@
 import { Fragment, useState, useEffect, FunctionComponent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faInstagram, faLinkedin, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { createProfile, getCurrentProfile } from '../../redux/dispatchers/profile'
 import { RootState } from '../../redux/store'
 
@@ -102,7 +105,7 @@ const ProfileDetailsForm: FunctionComponent<Props> = ({
         <Fragment>
             <h1 className="text-primary">Customize your Profile</h1>
             <p className="lead">
-                <i className="fas fa-user"></i> Let's make your profile stand out.
+                <FontAwesomeIcon icon={faUser} className='me-2'/> Let's make your profile stand out.
             </p>
             <div className='d-flex align-items-center py-4 bg-body-tertiary border rounded'>
                 <div className='w-100 m-auto' style={{maxWidth: "330px", padding: "1rem"}}>
@@ -243,7 +246,7 @@ const ProfileDetailsForm: FunctionComponent<Props> = ({
                                             defaultValue={twitter}
                                             onChange={(e) => onChange(e)}
                                         />
-                                        <i className="fab fa-twitter fa-1x"></i>
+                                        <FontAwesomeIcon icon={faXTwitter}/>
                                     </div>
 
                                     <div className="form-text social-input">
@@ -255,7 +258,7 @@ const ProfileDetailsForm: FunctionComponent<Props> = ({
                                             defaultValue={facebook}
                                             onChange={(e) => onChange(e)}
                                         />
-                                        <i className="fab fa-facebook fa-1x"></i>
+                                        <FontAwesomeIcon icon={faFacebook}/>
                                     </div>
 
                                     <div className="form-text social-input">
@@ -267,7 +270,7 @@ const ProfileDetailsForm: FunctionComponent<Props> = ({
                                             defaultValue={youtube}
                                             onChange={(e) => onChange(e)}
                                         />
-                                        <i className="fab fa-youtube fa-1x"></i>
+                                        <FontAwesomeIcon icon={faYoutube}/>
                                     </div>
 
                                     <div className="form-text social-input">
@@ -279,7 +282,7 @@ const ProfileDetailsForm: FunctionComponent<Props> = ({
                                             defaultValue={linkedin}
                                             onChange={(e) => onChange(e)}
                                         />
-                                        <i className="fab fa-linkedin fa-1x"></i>
+                                        <FontAwesomeIcon icon={faLinkedin}/>
                                     </div>
 
                                     <div className="form-text social-input">
@@ -291,7 +294,7 @@ const ProfileDetailsForm: FunctionComponent<Props> = ({
                                             defaultValue={instagram}
                                             onChange={(e) => onChange(e)}
                                         />
-                                        <i className="fab fa-instagram fa-1x"></i>
+                                        <FontAwesomeIcon icon={faInstagram}/>
                                     </div>
                                 </div>
                             </Fragment>

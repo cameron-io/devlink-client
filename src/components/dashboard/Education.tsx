@@ -1,8 +1,10 @@
 import { Fragment, FunctionComponent } from 'react'
 import Moment from 'react-moment'
 import { connect } from 'react-redux'
-import { deleteEducation } from '../../redux/dispatchers/profile'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
+import { deleteEducation } from '../../redux/dispatchers/profile'
 
 type Props = {
     education?: any[]
@@ -51,7 +53,7 @@ const Education: FunctionComponent<Props> = ({
                                         onClick={() => deleteEducation(edu.id)}
                                         className="btn btn-danger"
                                     >
-                                        <i className="fas fa-trash"></i>
+                                        <FontAwesomeIcon icon={faTrash} className='text-danger'/>
                                     </button>
                                 </tr>
                             ))}
@@ -63,7 +65,7 @@ const Education: FunctionComponent<Props> = ({
             <div className='border text-center rounded-3 mt-3' style={{width: 200}}>
                 <Link className='btn' to="/add-education">
                     <span>
-                        <i className="fas fa-graduation-cap text-primary" style={{width: 25}}></i>
+                        <FontAwesomeIcon icon={faGraduationCap} className='text-primary me-2'/>
                         Add Education
                     </span>
                 </Link>

@@ -1,4 +1,6 @@
 import { Fragment, FunctionComponent } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { Profile } from '../../types/common'
 import ProfileEducation from '../../components/profile/ProfileEducation'
 import ProfileExperience from '../../components/profile/ProfileExperience'
@@ -36,7 +38,7 @@ const ProfileAbout: FunctionComponent<Props> = ({
                         <div className='row'>
                             {skills.map((skill: string, index: number) => (
                                 <div className='col' key={index}>
-                                    <i className="fa fa-check"></i> {skill}
+                                    <FontAwesomeIcon icon={faCheck} className='me-2'/>{skill}
                                 </div>
                             ))}
                         </div>

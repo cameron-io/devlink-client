@@ -1,4 +1,7 @@
 import { FunctionComponent } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faGithub, faInstagram, faLinkedin, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { Profile } from '../../types/common'
 import Avatar from './ProfileAvatar'
 
@@ -32,7 +35,7 @@ const ProfileTop: FunctionComponent<Props> = ({
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <i className="fas fa-brands fa-github me-2"></i>
+                                <FontAwesomeIcon icon={faGithub} className='me-2'/>
                                 {gitHubUsername}
                             </a>
                         </div>
@@ -45,7 +48,7 @@ const ProfileTop: FunctionComponent<Props> = ({
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <i className="fas fa-globe me-2"></i>
+                                <FontAwesomeIcon icon={faGlobe} className='me-2'/>
                                 {website}
                             </a>
                         </div>
@@ -56,7 +59,7 @@ const ProfileTop: FunctionComponent<Props> = ({
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <i className="fab fa-twitter fa-2x"></i>
+                            <FontAwesomeIcon icon={faXTwitter}/>
                         </a>
                     )}
                     {social && social.facebook && (
@@ -65,7 +68,7 @@ const ProfileTop: FunctionComponent<Props> = ({
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <i className="fab fa-facebook fa-2x"></i>
+                            <FontAwesomeIcon icon={faFacebook}/>
                         </a>
                     )}
                     {social && social.linkedin && (
@@ -74,7 +77,7 @@ const ProfileTop: FunctionComponent<Props> = ({
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <i className="fab fa-linkedin fa-2x"></i>
+                            <FontAwesomeIcon icon={faLinkedin}/>
                         </a>
                     )}
                     {social && social.youtube && (
@@ -83,7 +86,7 @@ const ProfileTop: FunctionComponent<Props> = ({
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <i className="fab fa-youtube fa-2x"></i>
+                            <FontAwesomeIcon icon={faYoutube}/>
                         </a>
                     )}
                     {social && social.instagram && (
@@ -92,7 +95,7 @@ const ProfileTop: FunctionComponent<Props> = ({
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <i className="fab fa-instagram fa-2x"></i>
+                            <FontAwesomeIcon icon={faInstagram}/>
                         </a>
                     )}
                 </div>
