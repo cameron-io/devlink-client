@@ -7,7 +7,6 @@ import ProfileItem from '../../components/profiles/ProfileItem'
 import Spinner from '../../components/layout/Spinner'
 import { RootState } from '../../redux/store'
 import { Profile } from '../../types/common'
-import './Profiles.css'
 
 type Props = { profileData: any; getProfiles: any }
 
@@ -30,18 +29,16 @@ const Profiles: FunctionComponent<Props> = ({
                         <FontAwesomeIcon icon={faCircleNodes} className='me-2'/>
                         Browse and connect with developers
                     </p>
-                    <div className="profiles">
-                        {profiles.length > 0 ? (
-                            profiles.map((profile: Profile) => (
-                                <ProfileItem
-                                    key={profile.id}
-                                    profile={profile}
-                                />
-                            ))
-                        ) : (
-                            <h4>No profiles found...</h4>
-                        )}
-                    </div>
+                    {profiles.length > 0 ? (
+                        profiles.map((profile: Profile) => (
+                            <ProfileItem
+                                key={profile.id}
+                                profile={profile}
+                            />
+                        ))
+                    ) : (
+                        <h4>No profiles found...</h4>
+                    )}
                 </Fragment>
             )}
         </Fragment>
