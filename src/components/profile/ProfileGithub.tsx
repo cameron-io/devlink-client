@@ -22,21 +22,30 @@ const ProfileGithub: FunctionComponent<Props> = ({
     return (
         <Fragment>
             <div className="card mt-4">
-                <h5 className="card-header">GitHub Repos</h5>
+                <h5 className="card-header">GitHub Public Repos</h5>
                 <div className="card-body">
                     <ul>
                         {repos && (
                             repos.map(repo => (
                                 <li key={repo.id}>
-                                    <h4>
-                                        <a
-                                            href={repo.html_url} 
-                                            target='_blank'
-                                            rel='noopener noreferrer'
-                                        >
-                                            {repo.name}
-                                        </a>
-                                    </h4>
+                                    <div className='container'>
+                                        <div className='row'>
+                                            <h4 className='col'>
+                                                <a
+                                                    href={repo.html_url} 
+                                                    target='_blank'
+                                                    rel='noopener noreferrer'
+                                                >
+                                                    {repo.name}
+                                                </a>
+                                            </h4>
+                                            <p className='col text-end'>
+                                                <i className="fas fa-star me-1 text-warning"></i>
+                                                {repo.stargazers_count}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p>{repo.description}</p>
                                 </li>
                             ))
                         ) || <Spinner />}
