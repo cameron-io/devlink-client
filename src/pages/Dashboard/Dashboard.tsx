@@ -26,16 +26,22 @@ const Dashboard: FunctionComponent<Props> = ({
 
     let page = (
         <Fragment>
-            <h1 className="text-primary">Dashboard</h1>
-            <p className="lead">
-                <i className="fa fa-user"></i> Welcome {user && user.name}
-            </p>
-            {profile && (
-                <Fragment>
-                    <div className='text-end'>
+            <div className='container'>
+                <div className='row'>
+                    <h1 className="col text-primary text-start">Dashboard</h1>
+                    <div className='col text-end'>
                         <DashboardActions />
                     </div>
-                    <br></br>
+                </div>
+                <div className='row'>
+                    <p className="col lead">
+                        <i className="fa fa-user"></i> Welcome {user && user.name}
+                    </p>
+                </div>
+            </div>
+            <br></br>
+            {profile && (
+                <Fragment>
                     <Experience experience={profile.experience!} />
                     <Education education={profile.education!} />
 

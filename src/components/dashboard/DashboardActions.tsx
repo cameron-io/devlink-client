@@ -6,7 +6,7 @@ const DashboardActions = (_props: FormProps) => {
         <Fragment>
             <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Manage Profile
+                    Manage
                 </button>
                 <ul className="dropdown-menu">
                     <li>
