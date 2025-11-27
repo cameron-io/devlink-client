@@ -1,7 +1,13 @@
 import { Fragment } from 'react'
-import { FormProps, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const DashboardActions = (_props: FormProps) => {
+type DashboardActionsProps = {
+    deleteAccount: any
+}
+
+const DashboardActions = ({
+    deleteAccount
+}: DashboardActionsProps) => {
     return (
         <Fragment>
             <div className="dropdown">
@@ -18,20 +24,21 @@ const DashboardActions = (_props: FormProps) => {
                         </Link>
                     </li>
                     <li>
-                        <Link className='dropdown-item' to="/add-experience">
+                        <button
+                            className="dropdown-item"
+                            onClick={() => {
+                                if (window.confirm(
+                                    'Are you sure you want to delete your account? This cannot be undone.'
+                                )) {
+                                    return deleteAccount()
+                                }
+                            }}
+                        >
                             <span>
-                                <i className="fab fa-black-tie text-primary" style={{width: 25}}></i>
-                                Add Experience
+                                <i className="far fa-trash-alt text-danger" style={{width: 25}}></i>
+                                Delete My Account
                             </span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link className='dropdown-item' to="/add-education">
-                            <span>
-                                <i className="fas fa-graduation-cap text-primary" style={{width: 25}}></i>
-                                Add Education
-                            </span>
-                        </Link>
+                        </button>
                     </li>
                 </ul>
             </div>

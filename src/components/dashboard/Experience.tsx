@@ -2,6 +2,7 @@ import { Fragment, FunctionComponent } from 'react'
 import Moment from 'react-moment'
 import { connect } from 'react-redux'
 import { deleteExperience } from '../../redux/dispatchers/profile'
+import { Link } from 'react-router-dom'
 
 type Props = {
     experience?: any[]
@@ -59,7 +60,14 @@ const Experience: FunctionComponent<Props> = ({
                 </div>
                 )
             }
-            <br></br>
+            <div className='border text-center rounded-3 mt-3' style={{width: 200}}>
+                <Link className='btn' to="/add-experience">
+                    <span>
+                        <i className="fab fa-black-tie text-primary" style={{width: 25}}></i>
+                        Add Experience
+                    </span>
+                </Link>
+            </div>
         </Fragment>
     )
 }

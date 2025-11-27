@@ -30,7 +30,7 @@ const Dashboard: FunctionComponent<Props> = ({
                 <div className='row'>
                     <h1 className="col text-primary text-start">Dashboard</h1>
                     <div className='col text-end'>
-                        <DashboardActions />
+                        <DashboardActions deleteAccount={deleteAccount} />
                     </div>
                 </div>
                 <div className='row'>
@@ -41,25 +41,14 @@ const Dashboard: FunctionComponent<Props> = ({
             </div>
             <br></br>
             {profile && (
-                <Fragment>
-                    <Experience experience={profile.experience!} />
-                    <Education education={profile.education!} />
-
-                    <div className="my-5">
-                        <button
-                            className="btn border"
-                            onClick={() => {
-                                if (window.confirm(
-                                    'Are you sure you want to delete your account? This cannot be undone.'
-                                )) {
-                                    return deleteAccount()
-                                }
-                            }}
-                        >
-                            <i className="fas fa-trash-alt mx-1"></i> Delete My Account
-                        </button>
+                <div className='container mt-3'>
+                    <div className='row'>
+                        <Experience experience={profile.experience!} />
                     </div>
-                </Fragment>
+                    <div className='row mt-5'>
+                        <Education education={profile.education!} />
+                    </div>
+                </div>
             ) || (
                 <Fragment>
                     <p>
