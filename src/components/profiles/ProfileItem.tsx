@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import { FunctionComponent } from 'react'
 import Avatar from '../../components/profile/ProfileAvatar'
+import { Profile } from '../../types/common'
 
-type Props = { profile: any }
+type Props = { profile: Profile }
 
 const ProfileItem: FunctionComponent<Props> = ({
     profile: {
@@ -16,7 +17,7 @@ const ProfileItem: FunctionComponent<Props> = ({
     return (
         <div className="container border rounded-3 p-4">
             <div className='row'>
-                <div className='col m-4' style={{maxWidth: 180}}>
+                <div className='col me-4' style={{maxWidth: 180}}>
                     <Avatar avatar={avatar} size={180}></Avatar>
                 </div>
                 <div className='col border-end'>

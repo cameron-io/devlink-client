@@ -5,6 +5,7 @@ import ProfileItem from '../../components/profiles/ProfileItem'
 import Spinner from '../../components/layout/Spinner'
 import { RootState } from '../../redux/store'
 import './Profiles.css'
+import { Profile } from '../../types/common'
 
 type Props = { profileData: any; getProfiles: any }
 
@@ -29,7 +30,7 @@ const Profiles: FunctionComponent<Props> = ({
                     </p>
                     <div className="profiles">
                         {profiles.length > 0 ? (
-                            profiles.map((profile: any) => (
+                            profiles.map((profile: Profile) => (
                                 <ProfileItem
                                     key={profile.id}
                                     profile={profile}
