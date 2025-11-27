@@ -7,6 +7,7 @@ import ProfileTop from '../../components/profile/ProfileTop'
 import ProfileAbout from '../../components/profile/ProfileAbout'
 import type { RootState } from '../../redux/store'
 import { StateAuth, StateProfile } from '../../types/common'
+import ProfileGithub from '../../components/profile/ProfileGithub'
 
 type Props = {
     getProfileById: (userId: string) => Promise<void>
@@ -45,6 +46,7 @@ const Profile: FunctionComponent<Props> = ({
                         <div className='row'>
                             <div className='col'>
                                 <ProfileTop profile={profile} />
+                                <ProfileGithub gitHubUsername={profile.gitHubUsername} />
                             </div>
                             <div className='col'>
                                 <ProfileAbout profile={profile} />

@@ -1,0 +1,54 @@
+import { FunctionComponent, useEffect, Fragment } from 'react'
+import { connect } from 'react-redux'
+import { RootState } from '../../redux/store'
+import { getGithubRepos } from '../../redux/dispatchers/profile';
+import Spinner from '../layout/Spinner';
+
+type Props = {
+    gitHubUsername: string,
+    getGithubRepos: any,
+    repos: Array<any>
+}
+
+const ProfileGithub: FunctionComponent<Props> = ({
+    gitHubUsername,
+    getGithubRepos,
+    repos
+}) => {
+    useEffect(() => {
+        getGithubRepos(gitHubUsername)
+    }, [getGithubRepos])
+
+    return (
+        <Fragment>
+            <div className="card mt-4">
+                <h5 className="card-header">GitHub Repos</h5>
+                <div className="card-body">
+                    <ul>
+                        {repos && (
+                            repos.map(repo => (
+                                <li key={repo.id}>
+                                    <h4>
+                                        <a
+                                            href={repo.html_url} 
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                        >
+                                            {repo.name}
+                                        </a>
+                                    </h4>
+                                </li>
+                            ))
+                        ) || <Spinner />}
+                    </ul>
+                </div>
+            </div>
+        </Fragment>
+    );
+}
+
+const mapStateToProps = (state: RootState) => ({
+    repos: state.profile.repos
+})
+
+export default connect(mapStateToProps, {getGithubRepos})(ProfileGithub);
