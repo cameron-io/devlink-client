@@ -1,10 +1,10 @@
 # Developer Network
 
 Typescript React.js Single Page Application.
-
-Generated using Vite.
-
-State Management handled by Redux.
+- Bundled using Vite.
+- State Management handled by Redux.
+- Styles handled by Bootstrap
+- Fonts & Icons handled by FontAwesome
 
 ## Getting Started
 
