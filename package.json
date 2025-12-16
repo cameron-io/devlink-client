@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "devlink-types": "git@github.com:cameron-io/devlink-types.git",
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
     "@fortawesome/free-regular-svg-icons": "^7.1.0",
@@ -17,6 +16,7 @@
     "@testing-library/user-event": "^14.5.2",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.8",
+    "devlink-types": "git@github.com:cameron-io/devlink-types.git",
     "moment": "^2.30.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
